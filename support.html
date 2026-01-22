@@ -2,54 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Support | LunaDB</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Portal | LunaDB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Quick duplicate of styles for standalone usage */
-        :root { --primary: #0056b3; --dark: #1a1a1a; }
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; color: #333; }
-        header { background: white; padding: 20px 50px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 24px; font-weight: bold; color: var(--primary); text-decoration: none; }
-        .hero-mini { background: var(--primary); color: white; padding: 60px 50px; text-align: center; }
+        /* --- DARK THEME --- */
+        :root {
+            --primary: #00d2ff; --bg-dark: #0a0f1d; --text-light: #ffffff; --text-dim: #a0a8c0;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
         
-        .support-grid { max-width: 800px; margin: 50px auto; display: grid; gap: 20px; padding: 0 20px; }
-        .support-item { background: #f9f9f9; padding: 25px; border-radius: 8px; display: flex; align-items: center; text-decoration: none; color: #333; border: 1px solid #eee; transition: 0.2s; }
-        .support-item:hover { background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-color: var(--primary); }
-        .icon { font-size: 24px; color: var(--primary); margin-right: 20px; width: 40px; text-align: center; }
-        footer { background: var(--dark); color: white; padding: 30px; text-align: center; margin-top: 50px; }
+        header { padding: 20px 50px; background: rgba(10,15,29,0.9); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .logo { font-size: 24px; color: white; text-decoration: none; font-weight: bold; }
+        .logo span { color: var(--primary); }
+        
+        .container { max-width: 600px; margin: 60px auto; padding: 0 20px; }
+        
+        /* GLASS FORM CARD */
+        .card {
+            background: var(--glass); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1); padding: 40px; border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        
+        h1 { text-align: center; margin-bottom: 10px; }
+        p.subtitle { text-align: center; color: var(--text-dim); margin-bottom: 40px; }
+
+        label { display: block; margin-bottom: 8px; color: var(--primary); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        input, select, textarea { 
+            width: 100%; padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+            color: white; border-radius: 5px; box-sizing: border-box; font-family: inherit; margin-bottom: 20px;
+        }
+        input:focus, textarea:focus { outline: none; border-color: var(--primary); background: rgba(0,0,0,0.5); }
+        
+        button { 
+            width: 100%; padding: 15px; background: var(--primary); border: none; border-radius: 5px;
+            color: #000; font-weight: bold; font-size: 16px; cursor: pointer; transition: 0.3s;
+        }
+        button:hover { box-shadow: 0 0 20px var(--primary); }
+
+        /* LINKS */
+        .resources { text-align: center; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+        .resources a { color: var(--text-dim); text-decoration: none; font-size: 14px; }
+        .resources a:hover { color: var(--primary); }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo">LunaDB</a>
+        <a href="index.html" class="logo">Luna<span>DB</span></a>
+        <a href="index.html" style="color:white; text-decoration:none;">&larr; Back Home</a>
     </header>
 
-    <div class="hero-mini">
-        <h1>How can we help?</h1>
+    <div class="container">
+        <h1>Support Portal</h1>
+        <p class="subtitle">Submit a ticket directly to our engineering team.</p>
+
+        <div class="card">
+            <form id="luna-form">
+                <label>Your Email</label>
+                <input type="email" name="email" placeholder="name@company.com" required>
+
+                <label>Topic</label>
+                <select name="subject">
+                    <option>Technical Support</option>
+                    <option>New Project Quote</option>
+                    <option>Billing</option>
+                </select>
+
+                <label>Message</label>
+                <textarea name="message" rows="5" required>Hi LunaDB Team,
+
+I need help with...</textarea>
+
+                <button type="submit" id="submit-btn">Send Ticket</button>
+            </form>
+
+            <div id="success-message" style="display:none; text-align:center;">
+                <h3 style="color:#00ff88;">Ticket Created</h3>
+                <p>We will respond via email shortly.</p>
+                <button onclick="location.reload()" style="background:transparent; border:1px solid var(--primary); color:var(--primary); margin-top:10px;">New Ticket</button>
+            </div>
+        </div>
+
+        <div class="resources">
+            <p>Self Help:</p>
+            <a href="https://www.teamdesk.net/help/working-with-formulas/formula-language-reference/" target="_blank">
+                <i class="fa-solid fa-book"></i> TeamDesk Formula Reference
+            </a>
+        </div>
     </div>
 
-    <div class="support-grid">
-        <a href="https://www.teamdesk.net/help/working-with-formulas/formula-language-reference/" target="_blank" class="support-item">
-            <div class="icon">📚</div>
-            <div>
-                <h3 style="margin:0">Formula Reference Guide</h3>
-                <p style="margin:5px 0 0; color:#666;">Official TeamDesk documentation for logic and calculations.</p>
-            </div>
-        </a>
+    <script>
+        // PASTE YOUR GOOGLE SCRIPT URL HERE
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxiGjw9M-ulrcErFFncCsE12B75xllDL6UJb_qQaVzBA5wE_2jiU5gbd2m2kBzWcsjmUw/exec"; 
 
-        <a href="mailto:luke.cmk.302@gmail.com" class="support-item">
-            <div class="icon">✉️</div>
-            <div>
-                <h3 style="margin:0">Contact Technical Support</h3>
-                <p style="margin:5px 0 0; color:#666;">Get help with your Import Tools or Database scripts.</p>
-            </div>
-        </a>
-    </div>
+        const form = document.getElementById('luna-form');
+        const btn = document.getElementById('submit-btn');
+        const success = document.getElementById('success-message');
 
-    <footer>
-        &copy; 2026 LunaDB. Powered by TeamDesk Technology.
-    </footer>
-
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            btn.innerText = "Sending...";
+            const data = new FormData(form);
+            fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new URLSearchParams(data), mode: 'no-cors' })
+            .then(() => { form.style.display="none"; success.style.display="block"; })
+            .catch(() => { alert("Error sending."); btn.innerText = "Try Again"; });
+        });
+    </script>
 </body>
 </html>
