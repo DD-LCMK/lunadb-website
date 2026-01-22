@@ -3,78 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LunaDB | Enterprise Logistics Automation</title>
+    <title>LunaDB | Enterprise Data Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* CORPORATE THEME (Apex Style) */
-        :root { --primary: #0056b3; --dark: #1a1a1a; --light: #f4f6f8; }
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; color: #333; line-height: 1.6; }
-        
+        /* --- HIGH-TECH THEME VARIABLES --- */
+        :root {
+            --primary-accent: #00d2ff; /* Electric Cyan */
+            --secondary-accent: #3a7bd5; /* Deep Blue */
+            --expert-gold: #ffc107; /* Gold for Expert Badge */
+            --bg-dark: #0a0f1d; 
+            --bg-card: rgba(255, 255, 255, 0.05); 
+            --text-light: #ffffff;
+            --text-dim: #a0a8c0;
+        }
+
+        body { margin: 0; font-family: 'Inter', 'Segoe UI', sans-serif; background-color: var(--bg-dark); color: var(--text-light); line-height: 1.8; overflow-x: hidden; }
+        h1, h2, h3 { margin: 0; font-weight: 800; letter-spacing: -0.5px; }
+        p { color: var(--text-dim); margin-bottom: 20px; font-size: 16px; }
+        a { text-decoration: none; transition: 0.3s; }
+
         /* HEADER */
-        header { background: white; padding: 20px 50px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 24px; font-weight: bold; color: var(--primary); text-decoration: none; }
-        nav a { margin-left: 30px; text-decoration: none; color: #555; font-weight: 500; }
-        nav a:hover { color: var(--primary); }
-        .btn { background: var(--primary); color: white; padding: 10px 25px; border-radius: 5px; text-decoration: none; }
+        header { 
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 15px 50px; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(10, 15, 29, 0.95); backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1); box-sizing: border-box;
+        }
+        .logo { font-size: 26px; color: white; font-weight: 700; }
+        .logo span { color: var(--primary-accent); }
+        
+        nav { display: flex; align-items: center; gap: 30px; }
+        nav a { color: var(--text-dim); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        nav a:hover { color: var(--primary-accent); }
+        
+        .btn-login { 
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            padding: 8px 20px; border-radius: 4px; color: white !important; margin-left: 10px;
+        }
+        .btn-login:hover { background: var(--primary-accent); border-color: var(--primary-accent); color: var(--bg-dark) !important; }
 
-        /* HERO SECTION */
-        .hero { background: linear-gradient(135deg, #0056b3 0%, #003d80 100%); color: white; padding: 100px 50px; text-align: center; }
-        .hero h1 { font-size: 48px; margin-bottom: 20px; }
-        .hero p { font-size: 20px; opacity: 0.9; max-width: 700px; margin: 0 auto 40px; }
+        .btn-support { 
+            background: linear-gradient(45deg, var(--secondary-accent), var(--primary-accent)); 
+            padding: 10px 25px; border-radius: 50px; color: white !important;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+        }
+        .btn-support:hover { box-shadow: 0 0 30px rgba(0, 210, 255, 0.6); transform: scale(1.05); }
 
-        /* SERVICES GRID */
-        .services { padding: 80px 50px; background: white; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1200px; margin: 50px auto 0; }
-        .card { padding: 30px; border: 1px solid #eee; border-radius: 10px; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .card h3 { color: var(--primary); }
+        /* HERO */
+        .hero {
+            position: relative; height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center;
+            /* --- IMAGE 1: CHECK EXTENSION (.jpg or .png?) --- */
+            background: linear-gradient(rgba(10,15,29,0.8), rgba(10,15,29,0.9)), url('hero.jpg');
+            background-size: cover; background-attachment: fixed; background-position: center;
+        }
+        .hero h1 { 
+            font-size: 60px; line-height: 1.1; margin-bottom: 25px;
+            background: linear-gradient(to right, #fff, var(--primary-accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero p { font-size: 24px; max-width: 800px; margin: 0 auto 30px; font-weight: 300; }
+
+        .expert-badge {
+            display: inline-flex; align-items: center; gap: 10px;
+            margin-top: 30px; padding: 10px 20px;
+            border: 1px solid var(--expert-gold); border-radius: 30px;
+            color: var(--expert-gold); font-weight: bold; font-size: 14px;
+            background: rgba(255, 193, 7, 0.1); transition: 0.3s;
+        }
+        .expert-badge:hover { background: var(--expert-gold); color: #000; box-shadow: 0 0 20px var(--expert-gold); }
+
+        /* SECTIONS */
+        section { padding: 100px 50px; }
+        .section-header { text-align: center; margin-bottom: 80px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .section-header h2 { font-size: 42px; margin-bottom: 20px; color: white; }
+        .section-header span { color: var(--primary-accent); text-transform: uppercase; letter-spacing: 2px; font-weight: bold; font-size: 14px; }
+
+        /* FEATURE ROWS */
+        .feature-row { display: flex; align-items: center; gap: 60px; margin-bottom: 120px; max-width: 1300px; margin-left: auto; margin-right: auto; }
+        .feature-row:nth-child(even) { flex-direction: row-reverse; } 
+        
+        .feature-text { flex: 1; }
+        .feature-text h3 { font-size: 32px; color: white; margin-bottom: 20px; }
+        .feature-text ul { padding-left: 20px; color: var(--text-dim); }
+        .feature-text li { margin-bottom: 10px; }
+        
+        .feature-image { flex: 1; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); }
+        .feature-image img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; display: block; }
+        .feature-image:hover img { transform: scale(1.05); }
+
+        /* ADVANTAGE GRID */
+        .advantage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1300px; margin: 0 auto; }
+        .adv-card { background: rgba(255,255,255,0.03); padding: 40px; border-radius: 15px; border-top: 3px solid var(--secondary-accent); transition: 0.3s; }
+        .adv-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.06); border-color: var(--primary-accent); }
+        .adv-card i { font-size: 36px; color: var(--primary-accent); margin-bottom: 20px; }
+        .adv-card h4 { font-size: 22px; color: white; margin-bottom: 15px; }
+
+        /* INDUSTRIES GRID */
+        .industry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1300px; margin: 0 auto; }
+        .ind-card { 
+            background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); 
+            padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: center;
+        }
+        .ind-card:hover { border-color: var(--expert-gold); }
+        .ind-card i { font-size: 30px; color: var(--expert-gold); margin-bottom: 15px; }
+        .ind-card h4 { color: white; margin-bottom: 10px; }
 
         /* FOOTER */
-        footer { background: var(--dark); color: white; padding: 50px; text-align: center; font-size: 14px; }
-        footer a { color: #aaa; text-decoration: none; margin: 0 10px; }
-        footer a:hover { color: white; }
+        footer { background: #050a14; padding: 60px 50px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        footer a { color: var(--text-dim); margin: 0 15px; }
+        footer a:hover { color: var(--primary-accent); }
+
+        @media (max-width: 900px) { 
+            .feature-row { flex-direction: column !important; gap: 30px; text-align: center; } 
+            .feature-text ul { text-align: left; }
+            header { flex-direction: column; gap: 15px; padding: 20px; } nav { flex-direction: column; } 
+            .hero h1 { font-size: 40px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo">LunaDB</a>
+        <a href="index.html" class="logo">Luna<span>DB</span></a>
         <nav>
-            <a href="index.html">Solutions</a>
-            <a href="support.html">Support</a>
-            <a href="mailto:contact@lunadb.com.au" class="btn">Contact Us</a>
+            <a href="https://lunadb.dbflex.net/secure/login.aspx" target="_blank" class="btn-login">
+                <i class="fa-solid fa-lock"></i> DB Login
+            </a>
+            <a href="support.html" class="btn-support">Support Portal</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Intelligent Logistics Automation</h1>
-        <p>We bridge the gap between TeamDesk databases and Enterprise requirements using Python, Cloud Functions, and Custom Portals.</p>
-        <a href="support.html" class="btn" style="background: white; color: var(--primary);">Get Support</a>
+        <div style="z-index: 2;">
+            <h1>Enterprise Workflow<br>Automation.</h1>
+            <p>From Global Hotel Chains to Medical Networks.<br>We build the digital backbone for complex organizations.</p>
+            
+            <a href="https://lunadb.dbflex.net/secure/login.aspx" target="_blank" class="btn-support" style="padding: 15px 40px; font-size: 18px;">
+		   Start Free 14-Day Trial
+	    </a>
+            
+            <br>
+            <a href="https://www.teamdesk.net/experts/35" target="_blank" class="expert-badge">
+                <i class="fa-solid fa-certificate"></i> Verified TeamDesk Expert
+            </a>
+        </div>
     </section>
 
-    <section class="services">
-        <h2>Our Expertise</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>🚀 Custom Import Portals</h3>
-                <p>Drag-and-drop interfaces that process thousands of Excel rows in seconds, securely mapped to your shipments.</p>
+    <section>
+        <div class="section-header">
+            <span>Our Approach</span>
+            <h2>Why We Are Different</h2>
+            <p>We don't just build databases; we architect intelligent ecosystems.</p>
+        </div>
+
+        <div class="feature-row">
+            <div class="feature-text">
+                <h3><i class="fa-solid fa-database" style="color:var(--primary-accent);"></i> Centralized Data Architecture</h3>
+                <p>
+                    Stop running your business on fragmented spreadsheets. We unify your scattered data into a single, relational Source of Truth.
+                </p>
+                <p>
+                    Whether you are managing 5,000 hotel rooms or 100,000 medical records, our architecture ensures that every department—from Finance to Operations—sees the exact same live data instantly.
+                </p>
+                <ul>
+                    <li>Eliminate version control errors (No more "v2_final.xlsx").</li>
+                    <li>Connect satellite offices to HQ in real-time.</li>
+                    <li>Secure, permission-based access for different staff levels.</li>
+                </ul>
             </div>
-            <div class="card">
-                <h3>⚡ Python Automation</h3>
-                <p>Advanced scripting that TeamDesk standard formulas can't handle. API integrations, PDF generation, and complex routing.</p>
+            <div class="feature-image">
+                <img src="server.png" alt="Server Data Center">
             </div>
-            <div class="card">
-                <h3>🔒 Enterprise Security</h3>
-                <p>Bank-grade encryption, Secret Key authentication, and Domain Locking to protect your sensitive logistics data.</p>
+        </div>
+
+        <div class="feature-row">
+            <div class="feature-text">
+                <h3><i class="fa-solid fa-robot" style="color:var(--primary-accent);"></i> Intelligent Process Automation</h3>
+                <p>
+                    Your team should focus on strategy, not data entry. We deploy "Trigger-Based Logic" that acts as an invisible workforce 24/7.
+                </p>
+                <p>
+                    When a status changes, the system reacts: sending emails, generating PDF contracts, calculating commissions, or alerting managers—automatically and instantly.
+                </p>
+                <ul>
+                    <li>Auto-generate Invoices and Manifests as PDFs.</li>
+                    <li>Scheduled report delivery to stakeholders (Daily/Weekly).</li>
+                    <li>Complex routing logic for multi-stage approvals.</li>
+                </ul>
+            </div>
+            <div class="feature-image">
+                <img src="robot.jpg" alt="Automation Robot Arm">
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="feature-text">
+                <h3><i class="fa-solid fa-code-branch" style="color:var(--primary-accent);"></i> Bespoke Custom Architecture</h3>
+                <p>
+                    Off-the-shelf software requires you to change your business to fit their rules. We do the opposite.
+                </p>
+                <p>
+                    We map the database structure 1:1 to your real-world operations. If you have unique medical compliance rules or complex import/export tariffs, we build the logic natively into the core of the system.
+                </p>
+                <ul>
+                    <li>Custom User Interfaces for easy staff adoption.</li>
+                    <li>Python-based integration bridges for unique requirements.</li>
+                    <li>Scalable schema that grows with your business complexity.</li>
+                </ul>
+            </div>
+            <div class="feature-image">
+                <img src="blueprint.png" alt="Architecture Blueprints">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-header">
+            <h2>Industries We Serve</h2>
+            <p>Proven track record across diverse sectors.</p>
+        </div>
+        <div class="industry-grid">
+            <div class="ind-card">
+                <i class="fa-solid fa-hospital-user"></i>
+                <h4>Aged Care & Medical</h4>
+                <p>Compliance & Patient Rostering</p>
+            </div>
+            <div class="ind-card">
+                <i class="fa-solid fa-hotel"></i>
+                <h4>Hospitality & Hotels</h4>
+                <p>Asset & Project Management</p>
+            </div>
+            <div class="ind-card">
+                <i class="fa-solid fa-ship"></i>
+                <h4>Import / Export</h4>
+                <p>Logistics & Manifesting</p>
+            </div>
+            <div class="ind-card">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h4>Retail Chains</h4>
+                <p>Inventory & Supplier Portals</p>
             </div>
         </div>
     </section>
 
     <footer>
+        <div class="logo" style="margin-bottom: 20px;">Luna<span>DB</span></div>
+        <div style="margin-bottom: 20px;">
+            <a href="https://lunadb.dbflex.net/secure/login.aspx" target="_blank">LunaDB Login</a> | 
+            <a href="https://www.teamdesk.net/secure/login.aspx" target="_blank">TeamDesk Login</a> |
+            <a href="https://www.teamdesk.net/experts/35" target="_blank" style="color: #ffc107;">Official Expert Profile</a>
+        </div>
         <p>&copy; 2026 LunaDB. All Rights Reserved.</p>
-        <p>
-            <a href="legal.html">Privacy Policy</a> | 
-            <a href="legal.html">Terms of Service</a>
-        </p>
+        <p><a href="legal.html">Privacy & Terms</a></p>
     </footer>
 
 </body>
