@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LunaDB | Enterprise Logistics Automation</title>
+    <style>
+        /* CORPORATE THEME (Apex Style) */
+        :root { --primary: #0056b3; --dark: #1a1a1a; --light: #f4f6f8; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; color: #333; line-height: 1.6; }
+        
+        /* HEADER */
+        header { background: white; padding: 20px 50px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 24px; font-weight: bold; color: var(--primary); text-decoration: none; }
+        nav a { margin-left: 30px; text-decoration: none; color: #555; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        .btn { background: var(--primary); color: white; padding: 10px 25px; border-radius: 5px; text-decoration: none; }
+
+        /* HERO SECTION */
+        .hero { background: linear-gradient(135deg, #0056b3 0%, #003d80 100%); color: white; padding: 100px 50px; text-align: center; }
+        .hero h1 { font-size: 48px; margin-bottom: 20px; }
+        .hero p { font-size: 20px; opacity: 0.9; max-width: 700px; margin: 0 auto 40px; }
+
+        /* SERVICES GRID */
+        .services { padding: 80px 50px; background: white; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1200px; margin: 50px auto 0; }
+        .card { padding: 30px; border: 1px solid #eee; border-radius: 10px; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card h3 { color: var(--primary); }
+
+        /* FOOTER */
+        footer { background: var(--dark); color: white; padding: 50px; text-align: center; font-size: 14px; }
+        footer a { color: #aaa; text-decoration: none; margin: 0 10px; }
+        footer a:hover { color: white; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">LunaDB</a>
+        <nav>
+            <a href="index.html">Solutions</a>
+            <a href="support.html">Support</a>
+            <a href="mailto:contact@lunadb.com.au" class="btn">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Intelligent Logistics Automation</h1>
+        <p>We bridge the gap between TeamDesk databases and Enterprise requirements using Python, Cloud Functions, and Custom Portals.</p>
+        <a href="support.html" class="btn" style="background: white; color: var(--primary);">Get Support</a>
+    </section>
+
+    <section class="services">
+        <h2>Our Expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🚀 Custom Import Portals</h3>
+                <p>Drag-and-drop interfaces that process thousands of Excel rows in seconds, securely mapped to your shipments.</p>
+            </div>
+            <div class="card">
+                <h3>⚡ Python Automation</h3>
+                <p>Advanced scripting that TeamDesk standard formulas can't handle. API integrations, PDF generation, and complex routing.</p>
+            </div>
+            <div class="card">
+                <h3>🔒 Enterprise Security</h3>
+                <p>Bank-grade encryption, Secret Key authentication, and Domain Locking to protect your sensitive logistics data.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 LunaDB. All Rights Reserved.</p>
+        <p>
+            <a href="legal.html">Privacy Policy</a> | 
+            <a href="legal.html">Terms of Service</a>
+        </p>
+    </footer>
+
+</body>
+</html>
