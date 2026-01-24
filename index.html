@@ -1,145 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LunaDB | Enterprise Data Solutions</title>
-    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <link rel="icon" type="image/jpeg" href="image/favicon.jpg">
     <meta property="og:title" content="LunaDB | Enterprise Workflow Automation">
-    <meta property="og:description" content="We build the digital backbone for complex organizations. Verified TeamDesk Experts specialized in Medical, Hotel, and Logistics automation.">
-    <meta property="og:image" content="https://lunadb.com.au/hero.jpg">
+    <meta property="og:description"
+        content="We build the digital backbone for complex organizations. Verified TeamDesk Experts specialized in Medical, Hotel, and Logistics automation.">
+    <meta property="og:image" content="https://lunadb.com.au/image/hero.jpg">
     <meta property="og:url" content="https://lunadb.com.au">
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="LunaDB | Enterprise Data Solutions">
-    <meta name="twitter:description" content="Stop running your business on spreadsheets. We unify your data into a single Source of Truth.">
-    <meta name="twitter:image" content="https://lunadb.com.au/hero.jpg">
+    <meta name="twitter:description"
+        content="Stop running your business on spreadsheets. We unify your data into a single Source of Truth.">
+    <meta name="twitter:image" content="https://lunadb.com.au/image/hero.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* --- HIGH-TECH THEME VARIABLES --- */
         :root {
-            --primary-accent: #00d2ff; /* Electric Cyan */
-            --secondary-accent: #3a7bd5; /* Deep Blue */
-            --expert-gold: #ffc107; /* Gold for Expert Badge */
-            --bg-dark: #0a0f1d; 
-            --bg-card: rgba(255, 255, 255, 0.05); 
+            --primary-accent: #00d2ff;
+            /* Electric Cyan */
+            --secondary-accent: #3a7bd5;
+            /* Deep Blue */
+            --expert-gold: #ffc107;
+            /* Gold for Expert Badge */
+            --bg-dark: #0a0f1d;
+            --bg-card: rgba(255, 255, 255, 0.05);
             --text-light: #ffffff;
             --text-dim: #a0a8c0;
         }
 
-        body { margin: 0; font-family: 'Inter', 'Segoe UI', sans-serif; background-color: var(--bg-dark); color: var(--text-light); line-height: 1.8; overflow-x: hidden; }
-        h1, h2, h3 { margin: 0; font-weight: 800; letter-spacing: -0.5px; }
-        p { color: var(--text-dim); margin-bottom: 20px; font-size: 16px; }
-        a { text-decoration: none; transition: 0.3s; }
+        body {
+            margin: 0;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+        }
 
         /* HEADER */
-        header { 
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            padding: 15px 50px; display: flex; justify-content: space-between; align-items: center;
-            background: rgba(10, 15, 29, 0.95); backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.1); box-sizing: border-box;
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 15, 29, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-sizing: border-box;
         }
-        .logo { font-size: 26px; color: white; font-weight: 700; }
-        .logo span { color: var(--primary-accent); }
-        
-        nav { display: flex; align-items: center; gap: 30px; }
-        nav a { color: var(--text-dim); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
-        nav a:hover { color: var(--primary-accent); }
-        
-        .btn-login { 
-            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-            padding: 8px 20px; border-radius: 4px; color: white !important; margin-left: 10px;
-        }
-        .btn-login:hover { background: var(--primary-accent); border-color: var(--primary-accent); color: var(--bg-dark) !important; }
 
-        .btn-support { 
-            background: linear-gradient(45deg, var(--secondary-accent), var(--primary-accent)); 
-            padding: 10px 25px; border-radius: 50px; color: white !important;
+        .logo {
+            font-size: 26px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--primary-accent);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--text-dim);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: var(--primary-accent);
+        }
+
+        .btn-login {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 4px;
+            color: white !important;
+            margin-left: 10px;
+        }
+
+        .btn-login:hover {
+            background: var(--primary-accent);
+            border-color: var(--primary-accent);
+            color: var(--bg-dark) !important;
+        }
+
+        .btn-support {
+            background: linear-gradient(45deg, var(--secondary-accent), var(--primary-accent));
+            padding: 10px 25px;
+            border-radius: 50px;
+            color: white !important;
             box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
         }
-        .btn-support:hover { box-shadow: 0 0 30px rgba(0, 210, 255, 0.6); transform: scale(1.05); }
+
+        .btn-support:hover {
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
+            transform: scale(1.05);
+        }
 
         /* HERO */
         .hero {
-            position: relative; height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center;
-            background: linear-gradient(rgba(10,15,29,0.8), rgba(10,15,29,0.9)), url('hero.jpg');
-            background-size: cover; background-attachment: fixed; background-position: center;
+            position: relative;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(10, 15, 29, 0.8), rgba(10, 15, 29, 0.9)), url('image/hero.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
         }
-        .hero h1 { 
-            font-size: 60px; line-height: 1.1; margin-bottom: 25px;
-            background: linear-gradient(to right, #fff, var(--primary-accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+
+        .hero h1 {
+            font-size: 60px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(to right, #fff, var(--primary-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .hero p { font-size: 24px; max-width: 800px; margin: 0 auto 30px; font-weight: 300; }
+
+        .hero p {
+            font-size: 24px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
 
         .expert-badge {
-            display: inline-flex; align-items: center; gap: 10px;
-            margin-top: 30px; padding: 10px 20px;
-            border: 1px solid var(--expert-gold); border-radius: 30px;
-            color: var(--expert-gold); font-weight: bold; font-size: 14px;
-            background: rgba(255, 193, 7, 0.1); transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding: 10px 20px;
+            border: 1px solid var(--expert-gold);
+            border-radius: 30px;
+            color: var(--expert-gold);
+            font-weight: bold;
+            font-size: 14px;
+            background: rgba(255, 193, 7, 0.1);
+            transition: 0.3s;
         }
-        .expert-badge:hover { background: var(--expert-gold); color: #000; box-shadow: 0 0 20px var(--expert-gold); }
+
+        .expert-badge:hover {
+            background: var(--expert-gold);
+            color: #000;
+            box-shadow: 0 0 20px var(--expert-gold);
+        }
 
         /* SECTIONS */
-        section { padding: 100px 50px; }
-        .section-header { text-align: center; margin-bottom: 80px; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .section-header h2 { font-size: 42px; margin-bottom: 20px; color: white; }
-        .section-header span { color: var(--primary-accent); text-transform: uppercase; letter-spacing: 2px; font-weight: bold; font-size: 14px; }
+        section {
+            padding: 100px 50px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .section-header span {
+            color: var(--primary-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            font-size: 14px;
+        }
 
         /* TIMELINE (Process) */
-        .timeline-container { position: relative; max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-        .timeline-step { flex: 1; min-width: 200px; text-align: center; position: relative; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); }
-        .step-number { font-size: 40px; color: rgba(255,255,255,0.1); font-weight: 900; position: absolute; top: 10px; left: 15px; }
-        .timeline-step i { font-size: 30px; color: var(--primary-accent); margin-bottom: 20px; display: block; margin-top: 10px; }
-        .timeline-step h4 { color: white; margin-bottom: 10px; font-size: 18px; }
-        .timeline-step p { font-size: 14px; margin: 0; }
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .timeline-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .step-number {
+            font-size: 40px;
+            color: rgba(255, 255, 255, 0.1);
+            font-weight: 900;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+        }
+
+        .timeline-step i {
+            font-size: 30px;
+            color: var(--primary-accent);
+            margin-bottom: 20px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .timeline-step h4 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .timeline-step p {
+            font-size: 14px;
+            margin: 0;
+        }
 
         /* FEATURE ROWS */
-        .feature-row { display: flex; align-items: center; gap: 60px; margin-bottom: 120px; max-width: 1300px; margin-left: auto; margin-right: auto; }
-        .feature-row:nth-child(even) { flex-direction: row-reverse; } 
-        
-        .feature-text { flex: 1; }
-        .feature-text h3 { font-size: 32px; color: white; margin-bottom: 20px; }
-        .feature-text ul { padding-left: 20px; color: var(--text-dim); }
-        .feature-text li { margin-bottom: 10px; }
-        
-        .feature-image { flex: 1; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); }
-        .feature-image img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; display: block; }
-        .feature-image:hover img { transform: scale(1.05); }
+        .feature-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 120px;
+            max-width: 1300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-text h3 {
+            font-size: 32px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .feature-text ul {
+            padding-left: 20px;
+            color: var(--text-dim);
+        }
+
+        .feature-text li {
+            margin-bottom: 10px;
+        }
+
+        .feature-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+            display: block;
+        }
+
+        .feature-image:hover img {
+            transform: scale(1.05);
+        }
 
         /* PAIN GRID */
-        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .pain-card { background: rgba(255,255,255,0.02); padding: 40px; border-radius: 15px; border-left: 4px solid var(--expert-gold); }
-        .pain-card h4 { color: white; margin-bottom: 15px; font-size: 20px; }
-        .pain-list li { color: #ff6b6b; margin-bottom: 10px; list-style: none; display: flex; gap: 10px; align-items: center; }
-        .gain-list li { color: #00ff88; margin-bottom: 10px; list-style: none; display: flex; gap: 10px; align-items: center; }
-        .divider { height: 1px; background: rgba(255,255,255,0.1); margin: 20px 0; }
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pain-card {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 4px solid var(--expert-gold);
+        }
+
+        .pain-card h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .pain-list li {
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .gain-list li {
+            color: #00ff88;
+            margin-bottom: 10px;
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 20px 0;
+        }
 
         /* INDUSTRIES GRID */
-        .industry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1300px; margin: 0 auto; }
-        .ind-card { 
-            background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); 
-            padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: center;
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1300px;
+            margin: 0 auto;
         }
-        .ind-card:hover { border-color: var(--expert-gold); }
-        .ind-card i { font-size: 30px; color: var(--expert-gold); margin-bottom: 15px; }
-        .ind-card h4 { color: white; margin-bottom: 10px; }
+
+        .ind-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .ind-card:hover {
+            border-color: var(--expert-gold);
+        }
+
+        .ind-card i {
+            font-size: 30px;
+            color: var(--expert-gold);
+            margin-bottom: 15px;
+        }
+
+        .ind-card h4 {
+            color: white;
+            margin-bottom: 10px;
+        }
 
         /* FOOTER */
-        footer { background: #050a14; padding: 60px 50px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
-        footer a { color: var(--text-dim); margin: 0 15px; }
-        footer a:hover { color: var(--primary-accent); }
+        footer {
+            background: #050a14;
+            padding: 60px 50px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-        @media (max-width: 900px) { 
-            .feature-row { flex-direction: column !important; gap: 30px; text-align: center; } 
-            .feature-text ul { text-align: left; }
-            header { flex-direction: column; gap: 15px; padding: 20px; } nav { flex-direction: column; } 
-            .hero h1 { font-size: 40px; }
-            .timeline-container { flex-direction: column; }
+        footer a {
+            color: var(--text-dim);
+            margin: 0 15px;
+        }
+
+        footer a:hover {
+            color: var(--primary-accent);
+        }
+
+        @media (max-width: 900px) {
+            .feature-row {
+                flex-direction: column !important;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .feature-text ul {
+                text-align: left;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .timeline-container {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -155,10 +458,12 @@
     <section class="hero">
         <div style="z-index: 2;">
             <h1>Enterprise Workflow<br>Automation.</h1>
-            <p>From Global Hotel Chains to Medical Networks.<br>We build the digital backbone for complex organizations.</p>
-            
-            <a href="support.html?subject=FreeTrial" class="btn-support" style="padding: 15px 40px; font-size: 18px;">Start Free 14-Day Trial</a>
-            
+            <p>From Global Hotel Chains to Medical Networks.<br>We build the digital backbone for complex organizations.
+            </p>
+
+            <a href="support.html?subject=FreeTrial" class="btn-support"
+                style="padding: 15px 40px; font-size: 18px;">Start Free 14-Day Trial</a>
+
             <br>
             <a href="https://www.teamdesk.net/experts/35" target="_blank" class="expert-badge">
                 <i class="fa-solid fa-certificate"></i> Verified TeamDesk Expert
@@ -170,7 +475,8 @@
         <div class="section-header">
             <span>The Process</span>
             <h2>How We Build Your System</h2>
-            <p>We believe in transparency. Here is the exact roadmap we follow to take you from spreadsheet chaos to automated clarity.</p>
+            <p>We believe in transparency. Here is the exact roadmap we follow to take you from spreadsheet chaos to
+                automated clarity.</p>
         </div>
         <div class="timeline-container">
             <div class="timeline-step">
@@ -203,41 +509,47 @@
     <section style="background: rgba(255,255,255,0.02);">
         <div class="feature-row">
             <div class="feature-text">
-                <h3><i class="fa-solid fa-database" style="color:var(--primary-accent);"></i> Centralized Data Architecture</h3>
-                <p>Stop running your business on fragmented spreadsheets. We unify your scattered data into a single, relational Source of Truth.</p>
+                <h3><i class="fa-solid fa-database" style="color:var(--primary-accent);"></i> Centralized Data
+                    Architecture</h3>
+                <p>Stop running your business on fragmented spreadsheets. We unify your scattered data into a single,
+                    relational Source of Truth.</p>
                 <ul>
                     <li>Eliminate version control errors (No more "v2_final.xlsx").</li>
                     <li>Connect satellite offices to HQ in real-time.</li>
                     <li>Secure, permission-based access for different staff levels.</li>
                 </ul>
             </div>
-            <div class="feature-image"><img src="server.png" alt="Server Data Center"></div>
+            <div class="feature-image"><img src="image/server.png" alt="Server Data Center"></div>
         </div>
 
         <div class="feature-row">
             <div class="feature-text">
-                <h3><i class="fa-solid fa-robot" style="color:var(--primary-accent);"></i> Intelligent Process Automation</h3>
-                <p>Your team should focus on strategy, not data entry. We deploy "Trigger-Based Logic" that acts as an invisible workforce.</p>
+                <h3><i class="fa-solid fa-robot" style="color:var(--primary-accent);"></i> Intelligent Process
+                    Automation</h3>
+                <p>Your team should focus on strategy, not data entry. We deploy "Trigger-Based Logic" that acts as an
+                    invisible workforce.</p>
                 <ul>
                     <li>Auto-generate Invoices and Manifests as PDFs.</li>
                     <li>Scheduled report delivery to stakeholders.</li>
                     <li>Complex routing logic for multi-stage approvals.</li>
                 </ul>
             </div>
-            <div class="feature-image"><img src="robot.jpg" alt="Automation Robot"></div>
+            <div class="feature-image"><img src="image/robot.jpg" alt="Automation Robot"></div>
         </div>
 
         <div class="feature-row">
             <div class="feature-text">
-                <h3><i class="fa-solid fa-code-branch" style="color:var(--primary-accent);"></i> Bespoke Custom Architecture</h3>
-                <p>Off-the-shelf software requires you to change your business to fit their rules. We do the opposite. We map the database to your real-world operations.</p>
+                <h3><i class="fa-solid fa-code-branch" style="color:var(--primary-accent);"></i> Bespoke Custom
+                    Architecture</h3>
+                <p>Off-the-shelf software requires you to change your business to fit their rules. We do the opposite.
+                    We map the database to your real-world operations.</p>
                 <ul>
                     <li>Custom User Interfaces for easy staff adoption.</li>
                     <li>Python-based integration bridges.</li>
                     <li>Scalable schema that grows with your business.</li>
                 </ul>
             </div>
-            <div class="feature-image"><img src="blueprint.png" alt="Architecture"></div>
+            <div class="feature-image"><img src="image/blueprint.png" alt="Architecture"></div>
         </div>
     </section>
 
@@ -247,7 +559,7 @@
             <h2>Common Scenarios We Solve</h2>
             <p>Do any of these operational headaches sound familiar?</p>
         </div>
-        
+
         <div class="pain-grid">
             <div class="pain-card">
                 <h4><i class="fa-solid fa-user-nurse"></i> Aged Care & Medical</h4>
@@ -258,7 +570,8 @@
                 <div class="divider"></div>
                 <ul class="gain-list">
                     <li><i class="fa-solid fa-check"></i> <strong>Central Patient Database:</strong> 100% Secure.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>Automated Compliance:</strong> Alerts before expiry.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Automated Compliance:</strong> Alerts before expiry.
+                    </li>
                 </ul>
             </div>
 
@@ -270,7 +583,8 @@
                 </ul>
                 <div class="divider"></div>
                 <ul class="gain-list">
-                    <li><i class="fa-solid fa-check"></i> <strong>Live Dashboard:</strong> Real-time project status.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Live Dashboard:</strong> Real-time project status.
+                    </li>
                     <li><i class="fa-solid fa-check"></i> <strong>Mobile Audits:</strong> Staff update via phone.</li>
                 </ul>
             </div>
@@ -283,8 +597,40 @@
                 </ul>
                 <div class="divider"></div>
                 <ul class="gain-list">
-                    <li><i class="fa-solid fa-check"></i> <strong>One-Click Manifests:</strong> PDF generation instantly.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>API Integration:</strong> Sync with shipping lines.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>One-Click Manifests:</strong> PDF generation
+                        instantly.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>API Integration:</strong> Sync with shipping lines.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="pain-card">
+                <h4><i class="fa-solid fa-toolbox"></i> Small Business & Trades</h4>
+                <ul class="pain-list">
+                    <li><i class="fa-solid fa-xmark"></i> Leads lost in random text messages.</li>
+                    <li><i class="fa-solid fa-xmark"></i> Invoicing takes up your entire weekend.</li>
+                </ul>
+                <div class="divider"></div>
+                <ul class="gain-list">
+                    <li><i class="fa-solid fa-check"></i> <strong>Auto-Quotes:</strong> Send professional PDFs
+                        instantly.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Job Tracking:</strong> Know the exact stage of every
+                        job.</li>
+                </ul>
+            </div>
+
+            <div class="pain-card">
+                <h4><i class="fa-solid fa-briefcase"></i> Professional Services</h4>
+                <ul class="pain-list">
+                    <li><i class="fa-solid fa-xmark"></i> Scope creep and unbilled hours.</li>
+                    <li><i class="fa-solid fa-xmark"></i> Client data scattered in different folders.</li>
+                </ul>
+                <div class="divider"></div>
+                <ul class="gain-list">
+                    <li><i class="fa-solid fa-check"></i> <strong>Unified CRM:</strong> One view for every interaction.
+                    </li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Automated Retainers:</strong> recurring billing logic.
+                    </li>
                 </ul>
             </div>
         </div>
@@ -317,14 +663,15 @@
     <footer>
         <div class="logo" style="margin-bottom: 20px;">Luna<span>DB</span></div>
         <div style="margin-bottom: 20px;">
-            <a href="https://lunadb.dbflex.net/secure/login.aspx" target="_blank">LunaDB Login</a> | 
+            <a href="https://lunadb.dbflex.net/secure/login.aspx" target="_blank">LunaDB Login</a> |
             <a href="https://www.teamdesk.net/secure/login.aspx" target="_blank">TeamDesk Login</a> |
-            <a href="https://www.teamdesk.net/experts/35" target="_blank" style="color: #ffc107;">Official Expert Profile</a>
+            <a href="https://www.teamdesk.net/experts/35" target="_blank" style="color: #ffc107;">Official Expert
+                Profile</a>
         </div>
         <p>&copy; 2026 LunaDB. All Rights Reserved.</p>
         <p><a href="legal.html">Privacy & Terms</a></p>
     </footer>
 
 </body>
-</html>
 
+</html>
