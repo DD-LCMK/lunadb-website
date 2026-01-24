@@ -1,53 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support Portal | LunaDB</title>
+    <link rel="icon" type="image/jpeg" href="image/favicon.jpg">
+    <meta name="description" content="Contact LunaDB for technical support or project quotes.">
+    <meta property="og:title" content="Support Portal | LunaDB">
+    <meta property="og:description" content="Contact LunaDB for technical support or project quotes.">
+    <meta property="og:image" content="https://lunadb.com.au/image/hero.jpg">
+    <meta property="og:url" content="https://lunadb.com.au/support.html">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* --- DARK THEME --- */
         :root {
-            --primary: #00d2ff; --bg-dark: #0a0f1d; --text-light: #ffffff; --text-dim: #a0a8c0;
+            --primary: #00d2ff;
+            --bg-dark: #0a0f1d;
+            --text-light: #ffffff;
+            --text-dim: #a0a8c0;
             --glass: rgba(255, 255, 255, 0.05);
         }
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
-        
-        header { padding: 20px 50px; background: rgba(10,15,29,0.9); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .logo { font-size: 24px; color: white; text-decoration: none; font-weight: bold; }
-        .logo span { color: var(--primary); }
-        
-        .container { max-width: 600px; margin: 60px auto; padding: 0 20px; }
-        
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 20px 50px;
+            background: rgba(10, 15, 29, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
         /* GLASS FORM CARD */
         .card {
-            background: var(--glass); backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1); padding: 40px; border-radius: 15px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
-        
-        h1 { text-align: center; margin-bottom: 10px; }
-        p.subtitle { text-align: center; color: var(--text-dim); margin-bottom: 40px; }
 
-        label { display: block; margin-bottom: 8px; color: var(--primary); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-        input, select, textarea { 
-            width: 100%; padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
-            color: white; border-radius: 5px; box-sizing: border-box; font-family: inherit; margin-bottom: 20px;
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
         }
-        input:focus, textarea:focus { outline: none; border-color: var(--primary); background: rgba(0,0,0,0.5); }
-        
-        button { 
-            width: 100%; padding: 15px; background: var(--primary); border: none; border-radius: 5px;
-            color: #000; font-weight: bold; font-size: 16px; cursor: pointer; transition: 0.3s;
+
+        p.subtitle {
+            text-align: center;
+            color: var(--text-dim);
+            margin-bottom: 40px;
         }
-        button:hover { box-shadow: 0 0 20px var(--primary); }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: inherit;
+            margin-bottom: 20px;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary);
+            border: none;
+            border-radius: 5px;
+            color: #000;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            box-shadow: 0 0 20px var(--primary);
+        }
 
         /* LINKS */
-        .resources { text-align: center; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
-        .resources a { color: var(--text-dim); text-decoration: none; font-size: 14px; }
-        .resources a:hover { color: var(--primary); }
+        .resources {
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        .resources a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .resources a:hover {
+            color: var(--primary);
+        }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -82,7 +180,9 @@ I need help with...</textarea>
             <div id="success-message" style="display:none; text-align:center;">
                 <h3 style="color:#00ff88;">Ticket Created</h3>
                 <p>We will respond via email shortly.</p>
-                <button onclick="location.reload()" style="background:transparent; border:1px solid var(--primary); color:var(--primary); margin-top:10px;">New Ticket</button>
+                <button onclick="location.reload()"
+                    style="background:transparent; border:1px solid var(--primary); color:var(--primary); margin-top:10px;">New
+                    Ticket</button>
             </div>
         </div>
 
@@ -96,7 +196,7 @@ I need help with...</textarea>
 
     <script>
         // PASTE YOUR GOOGLE SCRIPT URL HERE
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxiGjw9M-ulrcErFFncCsE12B75xllDL6UJb_qQaVzBA5wE_2jiU5gbd2m2kBzWcsjmUw/exec"; 
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxiGjw9M-ulrcErFFncCsE12B75xllDL6UJb_qQaVzBA5wE_2jiU5gbd2m2kBzWcsjmUw/exec";
 
         const form = document.getElementById('luna-form');
         const btn = document.getElementById('submit-btn');
@@ -107,9 +207,10 @@ I need help with...</textarea>
             btn.innerText = "Sending...";
             const data = new FormData(form);
             fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new URLSearchParams(data), mode: 'no-cors' })
-            .then(() => { form.style.display="none"; success.style.display="block"; })
-            .catch(() => { alert("Error sending."); btn.innerText = "Try Again"; });
+                .then(() => { form.style.display = "none"; success.style.display = "block"; })
+                .catch(() => { alert("Error sending."); btn.innerText = "Try Again"; });
         });
     </script>
 </body>
+
 </html>
