@@ -148,6 +148,40 @@
             background-position: center;
         }
 
+        /* STATS BAR */
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: -5px;
+            /* Pull up to connect */
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--expert-gold);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-dim);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .hero h1 {
             font-size: 60px;
             line-height: 1.1;
@@ -471,6 +505,26 @@
         </div>
     </section>
 
+    <!-- IMPACT STATS -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Enterprise Systems</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">1M+</span>
+            <span class="stat-label">Records Processed</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Data Ownership</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">24h</span>
+            <span class="stat-label">Rapid Deployment</span>
+        </div>
+    </div>
+
     <section>
         <div class="section-header">
             <span>The Process</span>
@@ -539,10 +593,11 @@
 
         <div class="feature-row">
             <div class="feature-text">
-                <h3><i class="fa-solid fa-code-branch" style="color:var(--primary-accent);"></i> Bespoke Custom
-                    Architecture</h3>
-                <p>Off-the-shelf software requires you to change your business to fit their rules. We do the opposite.
-                    We map the database to your real-world operations.</p>
+                <h3><i class="fa-solid fa-code-branch" style="color:var(--primary-accent);"></i> Future-Proof
+                    Scalability</h3>
+                <p>Off-the-shelf software forces you to change your business to fit their limits. We build for growth.
+                </p>
+                <p>Designed to handle 10x your current volume. From startup chaos to IPO rigor without rebuilding.</p>
                 <ul>
                     <li>Custom User Interfaces for easy staff adoption.</li>
                     <li>Python-based integration bridges.</li>
