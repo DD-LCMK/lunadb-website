@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aged Care & Medical Database Automation | LunaDB</title>
+    <link rel="icon" type="image/jpeg" href="image/favicon.jpg">
+    <meta property="og:title" content="Aged Care & Medical Database Systems | LunaDB">
+    <meta property="og:description" content="Automated scheduling, compliance tracking, and Google Maps API routing for Aged Care and Medical providers in Australia.">
+    <meta property="og:url" content="https://lunadb.com.au/aged-care.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- GLOBAL THEME VARIABLES --- */
+        :root {
+            --primary-accent: #00d2ff;
+            --secondary-accent: #3a7bd5;
+            --expert-gold: #ffc107;
+            --bg-dark: #0a0f1d;
+            --text-light: #ffffff;
+            --text-dim: #a0a8c0;
+        }
+
+        body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-light); line-height: 1.8; overflow-x: hidden;}
+
+        header {
+            position: fixed; top: 0; width: 100%; z-index: 1000; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(10, 15, 29, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); box-sizing: border-box;
+        }
+
+        .logo { font-size: 26px; color: white; font-weight: 700; text-decoration: none; }
+        .logo span { color: var(--primary-accent); }
+        nav { display: flex; align-items: center; gap: 30px; }
+        nav a { color: var(--text-dim); font-weight: 600; font-size: 14px; text-transform: uppercase; text-decoration: none; transition: 0.3s; }
+        nav a:hover { color: var(--primary-accent); }
+        
+        .btn-support {
+            background: linear-gradient(45deg, var(--secondary-accent), var(--primary-accent));
+            padding: 10px 25px; border-radius: 50px; color: white !important; text-decoration: none; display: inline-block; font-weight: bold;
+        }
+
+        .hero {
+            padding: 180px 20px 80px; text-align: center; background: linear-gradient(rgba(10, 15, 29, 0.9), rgba(10, 15, 29, 1));
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .hero h1 { font-size: 50px; color: white; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 20px; color: var(--text-dim); max-width: 800px; margin: 0 auto 30px; }
+        
+        .industry-icon { font-size: 60px; color: var(--primary-accent); margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(0,210,255,0.4)); }
+
+        /* CONTENT SECTIONS */
+        .content-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 36px; color: white; margin-bottom: 15px; }
+
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02); padding: 40px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--primary-accent); transition: 0.3s;
+        }
+        .feature-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.04); }
+        .feature-card h3 { color: white; font-size: 22px; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .feature-card p { color: var(--text-dim); font-size: 15px; margin: 0; }
+
+        .banner { background: rgba(255, 193, 7, 0.05); border: 1px solid rgba(255, 193, 7, 0.2); padding: 50px; border-radius: 15px; text-align: center; margin-top: 80px; }
+        .banner h3 { color: white; font-size: 28px; margin-bottom: 15px; }
+        .banner p { color: var(--text-dim); margin-bottom: 25px; font-size: 18px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* FOOTER */
+        footer { background: #050a14; padding: 60px 50px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 50px; }
+        footer a { color: var(--text-dim); margin: 0 15px; text-decoration: none; }
+        footer a:hover { color: var(--primary-accent); }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Luna<span>DB</span></a>
+        <nav>
+            <a href="index.html">&larr; Back to Home</a>
+            <a href="about.html">About</a>
+            <a href="teamdesk-expert.html">TeamDesk Consulting</a>
+            <a href="support.html?topic=quote" class="btn-support">Book Consultation</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <i class="fa-solid fa-user-nurse industry-icon"></i>
+        <h1>Aged Care & Medical<br>Database Automation</h1>
+        <p>Eliminate manual scheduling, secure your compliance data, and fully automate your administrative overhead with precision-engineered TeamDesk architecture.</p>
+        <a href="support.html?topic=quote" class="btn-support" style="font-size: 18px; padding: 15px 40px; margin-top: 20px;">Request a Healthcare System Audit</a>
+    </section>
+
+    <section class="content-section">
+        <div class="section-header">
+            <h2>Specialized Capabilities for Healthcare</h2>
+            <p style="color: var(--text-dim);">We build custom logic to handle the unique logistical challenges of patient care and staff management.</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3><i class="fa-solid fa-map-location-dot" style="color: var(--primary-accent);"></i> Smart Scheduling & Routing</h3>
+                <p>We integrate the <strong>Google Maps API</strong> directly into your scheduling system. The database automatically calculates driving distances between patient visits, drastically reducing manual scheduling errors and providing immediate, highly accurate travel cost calculations for your staff.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3><i class="fa-solid fa-bell" style="color: var(--primary-accent);"></i> Automated Roster Alarms</h3>
+                <p>Never miss a patient visit. Our systems feature trigger-based logic that monitors upcoming schedules and issues automated alerts for patient roster updates, ensuring your care workers are always deployed exactly when and where they are needed.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3><i class="fa-solid fa-envelope-open-text" style="color: var(--primary-accent);"></i> Auto-Emailing Systems</h3>
+                <p>Keep everyone in the loop without lifting a finger. The database automatically generates and dispatches secure, formatted emails to both customers (patients/families) and staff members regarding upcoming schedules and important updates.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3><i class="fa-solid fa-file-invoice-dollar" style="color: var(--primary-accent);"></i> Zero-Touch Invoicing</h3>
+                <p>Convert completed staff schedules directly into billable invoices. Our Python-driven integration automatically pulls shift data, applies specific medical or care codes, and generates accurate, ready-to-send PDF invoices and automated documentation.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3><i class="fa-solid fa-chart-pie" style="color: var(--primary-accent);"></i> Staff Expense Analysis</h3>
+                <p>Gain total visibility over operational costs. We build customized analytics dashboards that track and categorize business expenses, travel costs, and billable hours on a per-staff basis, providing management with real-time financial oversight.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3><i class="fa-solid fa-shield-halved" style="color: var(--primary-accent);"></i> Compliance & Documentation</h3>
+                <p>Medical data requires absolute security. We establish centralized, permission-based systems to house compliance documentation, triggering automatic warnings before certifications expire and instantly generating required compliance forms on demand.</p>
+            </div>
+        </div>
+
+        <div class="banner">
+            <h3>Is your medical scheduling currently running on spreadsheets?</h3>
+            <p>Every manual data entry is a risk for compliance failure or a missed appointment. Let LunaDB engineer a secure, highly automated TeamDesk environment tailored to your exact clinic or agency.</p>
+            <a href="support.html?topic=quote" class="btn-support" style="background: linear-gradient(45deg, #ff9900, #ffc107); color: #000 !important; padding: 15px 40px; font-size: 18px;">Discuss Your Healthcare System Needs</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo" style="margin-bottom: 20px;">Luna<span>DB</span></div>
+        <div style="margin-bottom: 20px;">
+            <a href="about.html">About</a> |
+            <a href="teamdesk-expert.html">TeamDesk Consulting</a> |
+            <a href="https://lunadb.dbflex.net/secure/login.aspx" target="_blank">LunaDB Login</a> |
+            <a href="https://www.teamdesk.net/experts/35" target="_blank" style="color: var(--expert-gold);">Official Expert Profile</a>
+        </div>
+        <p style="color: var(--text-dim);">&copy; 2026 LunaDB. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
