@@ -16,7 +16,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="LunaDB | Enterprise Data Solutions">
     <meta name="twitter:description"
-        content="Stop running your business on spreadsheets. We unify your data into a single Source of Truth.">
+        content="Stop running your business on spreadsheets. We build custom, Python-automated relational databases for Australian enterprises.">
     <meta name="twitter:image" content="https://lunadb.com.au/image/hero.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -155,13 +155,37 @@
         .pain-list li { color: #ff6b6b; margin-bottom: 10px; list-style: none; display: flex; gap: 10px; align-items: center; }
         .gain-list li { color: #00ff88; margin-bottom: 10px; list-style: none; display: flex; gap: 10px; align-items: center; }
         .divider { height: 1px; background: rgba(255, 255, 255, 0.1); margin: 20px 0; }
+        
+        /* Dynamic Card Hover Effects for Case Studies */
+        .interactive-card {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--expert-gold);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-        /* INDUSTRIES GRID */
-        .industry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1300px; margin: 0 auto; }
-        .ind-card { background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)); padding: 30px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05); text-align: center; }
-        .ind-card:hover { border-color: var(--expert-gold); }
-        .ind-card i { font-size: 30px; color: var(--expert-gold); margin-bottom: 15px; }
-        .ind-card h4 { color: white; margin-bottom: 10px; }
+        .interactive-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(0, 210, 255, 0.1), transparent);
+            transform: skewX(-20deg);
+            transition: all 0.6s ease;
+        }
+
+        .interactive-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-accent);
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
+        }
+
+        .interactive-card:hover::before {
+            left: 200%;
+        }
 
         /* FOOTER */
         footer { background: #050a14; padding: 60px 50px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); }
@@ -268,27 +292,37 @@
         <div class="section-header">
             <span>Our Work</span>
             <h2>Proven Enterprise Architecture</h2>
-            <p>Real-world database systems engineered for high performance and complex operational logic.</p>
+            <p>We build the invisible engines that power complex organizations. No screenshots required—just pure logic, automation, and scale.</p>
         </div>
         
         <div class="pain-grid">
-            <div class="pain-card" style="border-left-color: var(--primary-accent);">
-                <h4><i class="fa-solid fa-calendar-days"></i> Automated Shift & Roster Planner</h4>
-                <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Built for SMBs to manage worker schedules and eliminate chaotic Excel sheets.</p>
+            <div class="interactive-card" style="border-left-color: var(--primary-accent);">
+                <h4><i class="fa-solid fa-chart-network"></i> Enterprise Video Analytics SaaS</h4>
+                <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Engineered the backend schema and metadata pipelines for a high-volume analytics platform.</p>
                 <div class="divider"></div>
                 <ul class="gain-list">
-                    <li><i class="fa-solid fa-check"></i> Complex relational table structures handling overlapping shift logic.</li>
-                    <li><i class="fa-solid fa-check"></i> Automated triggers to prevent double-booking and ensure compliance.</li>
+                    <li><i class="fa-solid fa-check"></i> Complex API routing to ingest and organize massive viewer retention datasets.</li>
+                    <li><i class="fa-solid fa-check"></i> Secure, multi-tenant permission logic separating corporate user dashboards.</li>
                 </ul>
             </div>
 
-            <div class="pain-card" style="border-left-color: var(--primary-accent);">
-                <h4><i class="fa-solid fa-chart-network"></i> High-Volume B2B SaaS Backend</h4>
-                <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Engineered the data schema and pipelines for a corporate video analytics engine.</p>
+            <div class="interactive-card" style="border-left-color: var(--primary-accent);">
+                <h4><i class="fa-solid fa-shield-halved"></i> Automated Moderation Engine</h4>
+                <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Built an autonomous monitoring program to track and manage malicious platform users.</p>
                 <div class="divider"></div>
                 <ul class="gain-list">
-                    <li><i class="fa-solid fa-check"></i> Seamless handling of extensive metadata routing and API integration.</li>
-                    <li><i class="fa-solid fa-check"></i> Highly secure, permission-based dashboard access for corporate clients.</li>
+                    <li><i class="fa-solid fa-check"></i> Real-time scraping and logging of platform bans directly into the relational database.</li>
+                    <li><i class="fa-solid fa-check"></i> Python-triggered automated blacklisting to maintain platform integrity without human intervention.</li>
+                </ul>
+            </div>
+
+            <div class="interactive-card" style="border-left-color: var(--primary-accent);">
+                <h4><i class="fa-solid fa-calendar-days"></i> Dynamic Shift & Roster Logic</h4>
+                <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Replaced chaotic Excel scheduling with a centralized database for SMB worker management.</p>
+                <div class="divider"></div>
+                <ul class="gain-list">
+                    <li><i class="fa-solid fa-check"></i> Relational table structures specifically designed to handle complex, overlapping shift rules.</li>
+                    <li><i class="fa-solid fa-check"></i> Trigger-based alerts that instantly prevent compliance violations and double-booking.</li>
                 </ul>
             </div>
         </div>
