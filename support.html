@@ -9,140 +9,80 @@
     <meta name="description" content="Contact LunaDB for technical support or project quotes.">
     <meta property="og:title" content="Support Portal | LunaDB">
     <meta property="og:description" content="Contact LunaDB for technical support or project quotes.">
-    <meta property="og:image" content="https://lunadb.com.au/image/hero.jpg">
     <meta property="og:url" content="https://lunadb.com.au/support.html">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* --- DARK THEME --- */
+        /* --- GLOBAL THEME VARIABLES --- */
         :root {
-            --primary: #00d2ff;
+            --primary-accent: #00d2ff;
+            --secondary-accent: #3a7bd5;
+            --expert-gold: #ffc107;
             --bg-dark: #0a0f1d;
             --text-light: #ffffff;
             --text-dim: #a0a8c0;
-            --glass: rgba(255, 255, 255, 0.05);
+            --glass: rgba(255, 255, 255, 0.03);
         }
 
         body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
+            margin: 0; font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-light); line-height: 1.8; display: flex; flex-direction: column; min-height: 100vh;
         }
 
         header {
-            padding: 20px 50px;
-            background: rgba(10, 15, 29, 0.9);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: fixed; top: 0; width: 100%; z-index: 1000; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(10, 15, 29, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); box-sizing: border-box;
         }
 
-        .logo {
-            font-size: 24px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+        .logo { font-size: 26px; color: white; font-weight: 700; text-decoration: none; }
+        .logo span { color: var(--primary-accent); }
+        
+        nav { display: flex; align-items: center; gap: 30px; }
+        nav a { color: var(--text-dim); font-weight: 600; font-size: 14px; text-transform: uppercase; text-decoration: none; transition: 0.3s; }
+        nav a:hover { color: var(--primary-accent); }
 
-        .logo span {
-            color: var(--primary);
-        }
+        .main-content { flex: 1; padding: 150px 20px 80px; max-width: 600px; margin: 0 auto; width: 100%; box-sizing: border-box; }
 
-        .container {
-            max-width: 600px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
+        .page-header { text-align: center; margin-bottom: 40px; }
+        .page-header h1 { font-size: 42px; margin-bottom: 10px; color: white; }
+        .page-header p { color: var(--text-dim); font-size: 16px; }
 
         /* GLASS FORM CARD */
         .card {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            background: var(--glass); border: 1px solid rgba(255, 255, 255, 0.05); border-left: 4px solid var(--primary-accent);
+            padding: 40px; border-radius: 15px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
         }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 10px;
+        label { display: block; margin-bottom: 8px; color: var(--text-dim); font-size: 14px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+
+        input, select, textarea {
+            width: 100%; padding: 15px; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white; border-radius: 8px; box-sizing: border-box; font-family: inherit; margin-bottom: 25px; font-size: 16px; transition: 0.3s;
         }
 
-        p.subtitle {
-            text-align: center;
-            color: var(--text-dim);
-            margin-bottom: 40px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--primary);
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-family: inherit;
-            margin-bottom: 20px;
-        }
-
-        input:focus,
-        textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            background: rgba(0, 0, 0, 0.5);
-        }
+        input:focus, textarea:focus, select:focus { outline: none; border-color: var(--primary-accent); background: rgba(0, 0, 0, 0.5); }
 
         button {
-            width: 100%;
-            padding: 15px;
-            background: var(--primary);
-            border: none;
-            border-radius: 5px;
-            color: #000;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
+            width: 100%; padding: 15px; background: linear-gradient(45deg, var(--secondary-accent), var(--primary-accent));
+            border: none; border-radius: 50px; color: white; font-weight: bold; font-size: 18px; cursor: pointer; transition: 0.3s; box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
         }
 
-        button:hover {
-            box-shadow: 0 0 20px var(--primary);
-        }
+        button:hover { box-shadow: 0 0 30px rgba(0, 210, 255, 0.6); transform: translateY(-2px); }
+
+        .trust-blurb { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .trust-blurb p { color: var(--text-dim); font-size: 14px; margin: 0; }
+        .trust-blurb i { color: var(--expert-gold); margin-right: 5px; }
 
         /* LINKS */
-        .resources {
-            text-align: center;
-            margin-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-        }
+        .resources { text-align: center; margin-top: 50px; }
+        .resources p { color: white; font-weight: bold; margin-bottom: 10px; }
+        .resources a { color: var(--primary-accent); text-decoration: none; font-size: 14px; transition: 0.3s; display: inline-block; padding: 10px 20px; border: 1px solid rgba(0, 210, 255, 0.2); border-radius: 8px;}
+        .resources a:hover { background: rgba(0, 210, 255, 0.1); }
 
-        .resources a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .resources a:hover {
-            color: var(--primary);
-        }
+        /* FOOTER */
+        footer { background: #050a14; padding: 60px 50px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: auto; }
+        footer a { color: var(--text-dim); margin: 0 15px; text-decoration: none; }
+        footer a:hover { color: var(--primary-accent); }
     </style>
 </head>
 
@@ -150,12 +90,17 @@
 
     <header>
         <a href="index.html" class="logo">Luna<span>DB</span></a>
-        <a href="index.html" style="color:white; text-decoration:none;">&larr; Back Home</a>
+        <nav>
+            <a href="index.html">&larr; Back to Home</a>
+            <a href="teamdesk-expert.html">TeamDesk Consulting</a>
+        </nav>
     </header>
 
-    <div class="container">
-        <h1>Support Portal</h1>
-        <p class="subtitle">Submit a ticket directly to our engineering team.</p>
+    <div class="main-content">
+        <div class="page-header">
+            <h1>Support & Enquiries</h1>
+            <p>Submit a ticket directly to our engineering team.</p>
+        </div>
 
         <div class="card">
             <form id="luna-form">
@@ -163,52 +108,90 @@
                 <input type="email" name="email" placeholder="name@company.com" required>
 
                 <label>Topic</label>
-                <select name="subject">
-                    <option>Technical Support</option>
-                    <option>New Project Quote</option>
-                    <option>Billing</option>
+                <select name="subject" id="subject-select">
+                    <option value="Technical Support">Technical Support</option>
+                    <option value="New Project Quote">New Project Quote</option>
+                    <option value="Billing">Billing</option>
                 </select>
 
                 <label>Message</label>
-                <textarea name="message" rows="5" required>Hi LunaDB Team,
+                <textarea name="message" id="message-text" rows="6" required>Hi LunaDB Team,
 
 I need help with...</textarea>
 
-                <button type="submit" id="submit-btn">Send Ticket</button>
+                <button type="submit" id="submit-btn">Send Message</button>
             </form>
 
-            <div id="success-message" style="display:none; text-align:center;">
-                <h3 style="color:#00ff88;">Ticket Created</h3>
-                <p>We will respond via email shortly.</p>
-                <button onclick="location.reload()"
-                    style="background:transparent; border:1px solid var(--primary); color:var(--primary); margin-top:10px;">New
-                    Ticket</button>
+            <div id="success-message" style="display:none; text-align:center; padding: 20px 0;">
+                <i class="fa-solid fa-circle-check" style="font-size: 50px; color: #00ff88; margin-bottom: 20px;"></i>
+                <h3 style="color:white; margin-bottom: 10px;">Message Received</h3>
+                <p style="color: var(--text-dim);">We have received your enquiry and will respond to your email shortly.</p>
+                <button onclick="location.reload()" style="background:transparent; border:1px solid var(--primary-accent); color:var(--primary-accent); box-shadow: none; margin-top:20px; font-size: 16px;">Send Another Message</button>
+            </div>
+            
+            <div class="trust-blurb" id="trust-blurb">
+                <p><i class="fa-solid fa-clock"></i> We typically respond within 24 - 48 hours.</p>
             </div>
         </div>
 
         <div class="resources">
-            <p>Self Help:</p>
+            <p>Self-Help Resources</p>
             <a href="https://www.teamdesk.net/help/working-with-formulas/formula-language-reference/" target="_blank">
                 <i class="fa-solid fa-book"></i> TeamDesk Formula Reference
             </a>
         </div>
     </div>
 
-    <script>
-        // PASTE YOUR GOOGLE SCRIPT URL HERE
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxiGjw9M-ulrcErFFncCsE12B75xllDL6UJb_qQaVzBA5wE_2jiU5gbd2m2kBzWcsjmUw/exec";
+    <footer>
+        <div class="logo" style="margin-bottom: 20px;">Luna<span>DB</span></div>
+        <div style="margin-bottom: 20px;">
+            <a href="teamdesk-expert.html">TeamDesk Consulting</a> |
+            <a href="https://lunadb.dbflex.net/secure/login.aspx" target="_blank">LunaDB Login</a> |
+            <a href="https://www.teamdesk.net/experts/35" target="_blank" style="color: var(--expert-gold);">Official Expert Profile</a>
+        </div>
+        <p style="color: var(--text-dim);">&copy; 2026 LunaDB. All Rights Reserved.</p>
+        <p><a href="legal.html" style="font-size: 14px;">Privacy & Terms</a></p>
+    </footer>
 
+    <script>
+        // Form Submission Logic
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxiGjw9M-ulrcErFFncCsE12B75xllDL6UJb_qQaVzBA5wE_2jiU5gbd2m2kBzWcsjmUw/exec";
         const form = document.getElementById('luna-form');
         const btn = document.getElementById('submit-btn');
         const success = document.getElementById('success-message');
+        const trustBlurb = document.getElementById('trust-blurb');
 
         form.addEventListener('submit', e => {
             e.preventDefault();
             btn.innerText = "Sending...";
             const data = new FormData(form);
             fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new URLSearchParams(data), mode: 'no-cors' })
-                .then(() => { form.style.display = "none"; success.style.display = "block"; })
-                .catch(() => { alert("Error sending."); btn.innerText = "Try Again"; });
+                .then(() => { 
+                    form.style.display = "none"; 
+                    trustBlurb.style.display = "none";
+                    success.style.display = "block"; 
+                })
+                .catch(() => { alert("Error sending message. Please try again."); btn.innerText = "Send Message"; });
+        });
+
+        // URL Parameter Pre-filling Logic
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const topic = urlParams.get('topic');
+            const plan = urlParams.get('plan');
+            
+            const subjectSelect = document.getElementById('subject-select');
+            const messageText = document.getElementById('message-text');
+            
+            if (topic === 'quote') {
+                subjectSelect.value = 'New Project Quote';
+            }
+            
+            if (plan) {
+                messageText.value = `Hi LunaDB Team,\n\nI am interested in the ${plan} Partnership plan. Please let me know the next steps to get started.`;
+            } else if (topic === 'quote') {
+                messageText.value = `Hi LunaDB Team,\n\nI would like to request a custom project quote. My business needs help with...`;
+            }
         });
     </script>
 </body>
