@@ -148,44 +148,37 @@
         .feature-image img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; display: block; }
         .feature-image:hover img { transform: scale(1.05); }
 
-        /* PAIN GRID */
+        /* PAIN GRID & LIST ALIGNMENT FIX */
         .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
         .pain-card { background: rgba(255, 255, 255, 0.02); padding: 40px; border-radius: 15px; border-left: 4px solid var(--expert-gold); }
-        .pain-card h4 { color: white; margin-bottom: 15px; font-size: 20px; }
-        .pain-list li { color: #ff6b6b; margin-bottom: 10px; list-style: none; display: flex; gap: 10px; align-items: center; }
-        .gain-list li { color: #00ff88; margin-bottom: 10px; list-style: none; display: flex; gap: 10px; align-items: center; }
-        .divider { height: 1px; background: rgba(255, 255, 255, 0.1); margin: 20px 0; }
+        .pain-card h4 { color: white; margin-bottom: 25px; font-size: 20px; }
+        
+        .pain-list, .gain-list { padding: 0; margin: 0; }
+        .pain-list li { color: #ff6b6b; margin-bottom: 15px; list-style: none; display: flex; align-items: flex-start; gap: 12px; font-size: 15px; }
+        .pain-list li i { margin-top: 6px; flex-shrink: 0; }
+        .pain-list li span { color: var(--text-dim); }
+        
+        .gain-list li { color: #00ff88; margin-bottom: 15px; list-style: none; display: flex; align-items: flex-start; gap: 12px; font-size: 15px; }
+        .gain-list li i { margin-top: 6px; flex-shrink: 0; }
+        .gain-list li span { color: var(--text-dim); line-height: 1.6; }
+        .gain-list li strong { color: white; }
+
+        .divider { height: 1px; background: rgba(255, 255, 255, 0.1); margin: 25px 0; }
         
         /* Dynamic Card Hover Effects for Case Studies */
         .interactive-card {
-            background: rgba(255, 255, 255, 0.02);
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-left: 4px solid var(--expert-gold);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            background: rgba(255, 255, 255, 0.02); padding: 40px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--expert-gold); transition: all 0.4s ease; position: relative; overflow: hidden;
         }
 
         .interactive-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%; width: 50%; height: 100%;
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
             background: linear-gradient(to right, transparent, rgba(0, 210, 255, 0.1), transparent);
-            transform: skewX(-20deg);
-            transition: all 0.6s ease;
+            transform: skewX(-20deg); transition: all 0.6s ease;
         }
 
-        .interactive-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-accent);
-            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
-        }
-
-        .interactive-card:hover::before {
-            left: 200%;
-        }
+        .interactive-card:hover { transform: translateY(-5px); border-color: var(--primary-accent); box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15); }
+        .interactive-card:hover::before { left: 200%; }
 
         /* FOOTER */
         footer { background: #050a14; padding: 60px 50px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); }
@@ -212,7 +205,7 @@
             <a href="https://lunadb.dbflex.net/secure/login.aspx" target="_blank" class="btn-login">
                 <i class="fa-solid fa-lock"></i> DB Login
             </a>
-            <a href="support.html" class="btn-support">Support Portal</a>
+            <a href="support.html?topic=quote" class="btn-support">Support Portal</a>
         </nav>
     </header>
 
@@ -223,7 +216,7 @@
             </p>
 
             <div style="margin-top: 20px;">
-                <a href="support.html" class="btn-support" style="padding: 15px 40px; font-size: 18px; margin-right: 15px;">Book a Free System Audit</a>
+                <a href="support.html?topic=quote" class="btn-support" style="padding: 15px 40px; font-size: 18px; margin-right: 15px;">Book a Free System Audit</a>
                 <br><br>
                 <a href="https://lunadb.dbflex.net/secure/register.aspx" style="color: var(--text-dim); text-decoration: underline; font-size: 14px;">Or explore a 14-Day TeamDesk Trial</a>
             </div>
@@ -301,8 +294,8 @@
                 <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Engineered the backend schema and metadata pipelines for a high-volume analytics platform.</p>
                 <div class="divider"></div>
                 <ul class="gain-list">
-                    <li><i class="fa-solid fa-check"></i> Complex API routing to ingest and organize massive viewer retention datasets.</li>
-                    <li><i class="fa-solid fa-check"></i> Secure, multi-tenant permission logic separating corporate user dashboards.</li>
+                    <li><i class="fa-solid fa-check"></i> <span>Complex API routing to ingest and organize massive viewer retention datasets.</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span>Secure, multi-tenant permission logic separating corporate user dashboards.</span></li>
                 </ul>
             </div>
 
@@ -311,8 +304,8 @@
                 <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Built an autonomous monitoring program to track and manage malicious platform users.</p>
                 <div class="divider"></div>
                 <ul class="gain-list">
-                    <li><i class="fa-solid fa-check"></i> Real-time scraping and logging of platform bans directly into the relational database.</li>
-                    <li><i class="fa-solid fa-check"></i> Python-triggered automated blacklisting to maintain platform integrity without human intervention.</li>
+                    <li><i class="fa-solid fa-check"></i> <span>Real-time scraping and logging of platform bans directly into the relational database.</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span>Python-triggered automated blacklisting to maintain platform integrity without human intervention.</span></li>
                 </ul>
             </div>
 
@@ -321,8 +314,57 @@
                 <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Replaced chaotic Excel scheduling with a centralized database for SMB worker management.</p>
                 <div class="divider"></div>
                 <ul class="gain-list">
-                    <li><i class="fa-solid fa-check"></i> Relational table structures specifically designed to handle complex, overlapping shift rules.</li>
-                    <li><i class="fa-solid fa-check"></i> Trigger-based alerts that instantly prevent compliance violations and double-booking.</li>
+                    <li><i class="fa-solid fa-check"></i> <span>Relational table structures specifically designed to handle complex, overlapping shift rules.</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span>Trigger-based alerts that instantly prevent compliance violations and double-booking.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-header">
+            <span>Why Switch?</span>
+            <h2>Common Scenarios We Solve</h2>
+            <p>While these examples are industry-specific, our underlying automation architecture—including Python-driven documentation, deep API connections, and strict logic rules—can be deployed across any sector.</p>
+        </div>
+
+        <div class="pain-grid">
+            <div class="pain-card">
+                <h4><i class="fa-solid fa-user-nurse"></i> Aged Care & Medical</h4>
+                <ul class="pain-list">
+                    <li><i class="fa-solid fa-xmark"></i> <span>Manual schedule routing and inaccurate drive-time cost estimates.</span></li>
+                    <li><i class="fa-solid fa-xmark"></i> <span>Missed patient roster updates and scattered compliance documents.</span></li>
+                </ul>
+                <div class="divider"></div>
+                <ul class="gain-list">
+                    <li><i class="fa-solid fa-check"></i> <span><strong>Smart Scheduling:</strong> Google Maps integration for automated distance routing and accurate driving cost calculations.</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span><strong>Total Automation:</strong> Auto-emailing for upcoming schedules, patient roster alarms, and comprehensive staff expense analysis.</span></li>
+                </ul>
+            </div>
+
+            <div class="pain-card">
+                <h4><i class="fa-solid fa-hotel"></i> Hotel & Hospitality</h4>
+                <ul class="pain-list">
+                    <li><i class="fa-solid fa-xmark"></i> <span>Manually estimating budgets and assigning tasks for new projects.</span></li>
+                    <li><i class="fa-solid fa-xmark"></i> <span>Losing track of project progression and team accountability across sites.</span></li>
+                </ul>
+                <div class="divider"></div>
+                <ul class="gain-list">
+                    <li><i class="fa-solid fa-check"></i> <span><strong>Automated Scoping:</strong> System instantly pre-fills budgets, tasks, and team members when a new project is initialized.</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span><strong>Strict Audit Trails:</strong> Logs every single data change (who, what, when) alongside automated progression analytics and team notifications.</span></li>
+                </ul>
+            </div>
+
+            <div class="pain-card">
+                <h4><i class="fa-solid fa-ship"></i> Import & Logistics</h4>
+                <ul class="pain-list">
+                    <li><i class="fa-solid fa-xmark"></i> <span>Mismanaging complex "parts of parts" inventory relationships and stock levels.</span></li>
+                    <li><i class="fa-solid fa-xmark"></i> <span>Copy-pasting data between disconnected systems to generate invoices.</span></li>
+                </ul>
+                <div class="divider"></div>
+                <ul class="gain-list">
+                    <li><i class="fa-solid fa-check"></i> <span><strong>Intelligent Inventory:</strong> Complex automated stock calculations to strictly maintain low and over-stock thresholds across the supply chain.</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span><strong>Python-Driven Execution:</strong> Advanced TeamDesk integration for auto-generating complex invoices, managing Outlook emails, and live profit/loss analysis.</span></li>
                 </ul>
             </div>
         </div>
@@ -367,55 +409,6 @@
                 </ul>
             </div>
             <div class="feature-image"><img src="image/blueprint.png" alt="Custom TeamDesk database schema blueprint and system integration"></div>
-        </div>
-    </section>
-
-    <section>
-        <div class="section-header">
-            <span>Why Switch?</span>
-            <h2>Common Scenarios We Solve</h2>
-            <p>Do any of these operational headaches sound familiar?</p>
-        </div>
-
-        <div class="pain-grid">
-            <div class="pain-card">
-                <h4><i class="fa-solid fa-user-nurse"></i> Aged Care & Medical</h4>
-                <ul class="pain-list">
-                    <li><i class="fa-solid fa-xmark"></i> Compliance docs scattered in emails.</li>
-                    <li><i class="fa-solid fa-xmark"></i> Missed patient roster updates.</li>
-                </ul>
-                <div class="divider"></div>
-                <ul class="gain-list">
-                    <li><i class="fa-solid fa-check"></i> <strong>Central Patient Database:</strong> 100% Secure.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>Automated Compliance:</strong> Alerts before expiry.</li>
-                </ul>
-            </div>
-
-            <div class="pain-card">
-                <h4><i class="fa-solid fa-hotel"></i> Hotel & Hospitality</h4>
-                <ul class="pain-list">
-                    <li><i class="fa-solid fa-xmark"></i> Losing track of assets across sites.</li>
-                    <li><i class="fa-solid fa-xmark"></i> Manual project reports take days.</li>
-                </ul>
-                <div class="divider"></div>
-                <ul class="gain-list">
-                    <li><i class="fa-solid fa-check"></i> <strong>Live Dashboard:</strong> Real-time project status.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>Mobile Audits:</strong> Staff update via phone.</li>
-                </ul>
-            </div>
-
-            <div class="pain-card">
-                <h4><i class="fa-solid fa-ship"></i> Import & Logistics</h4>
-                <ul class="pain-list">
-                    <li><i class="fa-solid fa-xmark"></i> Manifest errors causing customs delays.</li>
-                    <li><i class="fa-solid fa-xmark"></i> Copy-pasting data into PDF forms.</li>
-                </ul>
-                <div class="divider"></div>
-                <ul class="gain-list">
-                    <li><i class="fa-solid fa-check"></i> <strong>One-Click Manifests:</strong> PDF generation instantly.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>API Integration:</strong> Sync with shipping lines.</li>
-                </ul>
-            </div>
         </div>
     </section>
 
