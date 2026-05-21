@@ -9,139 +9,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-dark: #070a13;
-            --card-bg: #0d1324;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
             --accent: #38bdf8;
             --text-main: #f8fafc;
-            --text-dim: #708099;
-            --border-color: rgba(255, 255, 255, 0.03);
+            --text-dim: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.05);
         }
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 5%;
-            border-bottom: 1px solid var(--border-color);
-            background: rgba(7, 10, 19, 0.7);
-            backdrop-filter: blur(12px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
+        body { font-family: system-ui, -apple-system, sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; border-bottom: 1px solid var(--border-color); background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); position: fixed; width: 100%; top: 0; z-index: 1000; }
         .logo { font-size: 1.4rem; font-weight: 800; color: var(--text-main); text-decoration: none; }
         .logo span { color: var(--accent); }
-        nav { display: flex; gap: 2.5rem; }
+        nav { display: flex; gap: 2rem; }
         nav a { color: var(--text-dim); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
         nav a.active { color: var(--text-main); }
-        .btn-header { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-main); padding: 0.5rem 1.2rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
-
-        .container { max-width: 1300px; margin: 0 auto; padding: 10rem 5% 4rem; }
+        .btn-header { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-main); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
         
-        .badge-container {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            background: linear-gradient(135deg, #0d1324 0%, #10172a 100%);
-            border: 1px solid var(--border-color);
-            padding: 3rem;
-            border-radius: 16px;
-            margin-bottom: 5rem;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.2);
-        }
-
-        .badge-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 12px;
-            object-fit: cover;
-            border: 2px solid rgba(56, 189, 248, 0.2);
-        }
-
-        .badge-text h1 { font-size: 2.2rem; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
-        .badge-text p { color: var(--text-dim); font-size: 1.1rem; max-width: 800px; line-height: 1.6; }
-        .badge-text a { color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 1px dashed var(--accent); transition: all 0.2s; }
-        .badge-text a:hover { color: #fff; border-bottom-style: solid; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 8rem 5% 4rem; }
+        .badge-container { display: flex; align-items: center; gap: 1.5rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 2rem; border-radius: 12px; margin-bottom: 4rem; }
+        .badge-img { width: 90px; height: 90px; border-radius: 10px; object-fit: cover; }
+        .badge-text h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.3rem; }
+        .badge-text p { color: var(--text-dim); font-size: 1rem; }
+        .badge-text a { color: var(--accent); font-weight: 600; text-decoration: none; }
         
-        .pricing-section { margin-top: 5rem; }
-        .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-header span { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; }
-        .section-header h2 { font-size: 2.6rem; font-weight: 900; margin-top: 0.5rem; letter-spacing: -0.5px; }
-        .section-header p { color: var(--text-dim); max-width: 700px; margin: 0.5rem auto 0; font-size: 1.1rem; }
+        .pricing-section { margin-top: 4rem; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header span { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1.5px; }
+        .section-header h2 { font-size: 2.2rem; font-weight: 800; margin-top: 0.5rem; }
+        .section-header p { color: var(--text-dim); max-width: 600px; margin: 0.5rem auto 0; }
         
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem; margin-top: 4rem; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .pricing-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 3rem 2rem; text-align: center; display: flex; flex-direction: column; position: relative; }
+        .pricing-card.featured { border-color: var(--accent); box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15); }
+        .pricing-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; }
+        .price { font-size: 2.8rem; font-weight: 800; color: var(--text-main); line-height: 1; }
+        .price span { font-size: 1rem; color: var(--text-dim); font-weight: 500; }
         
-        .pricing-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 4rem 2.5rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .pricing-card.featured {
-            border-color: var(--accent);
-            box-shadow: 0 10px 40px rgba(56, 189, 248, 0.08);
-            background: linear-gradient(180deg, #0d1324 0%, #0e172c 100%);
-        }
-
-        .pricing-card h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -0.3px; }
-        
-        .price { font-size: 3.2rem; font-weight: 900; color: var(--text-main); line-height: 1; letter-spacing: -1px; }
-        .price span { font-size: 1.1rem; color: var(--text-dim); font-weight: 500; letter-spacing: 0; }
-        
-        .price-alt {
-            font-size: 0.85rem;
-            color: var(--accent);
-            font-weight: 700;
-            margin: 0.75rem 0 2rem;
-            background: rgba(56, 189, 248, 0.04);
-            padding: 0.5rem;
-            border-radius: 6px;
-            letter-spacing: 0.3px;
-            border: 1px solid rgba(56, 189, 248, 0.1);
-        }
-
-        .pricing-card p { color: var(--text-dim); font-size: 1rem; margin-bottom: 2.5rem; line-height: 1.6; text-align: left; }
-        
-        .btn-pricing {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            padding: 0.9rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
-            margin-top: auto;
-            transition: all 0.2s;
-        }
-
+        .price-alt { font-size: 0.85rem; color: var(--accent); font-weight: 600; margin: 0.5rem 0 1.5rem; background: rgba(56, 189, 248, 0.05); padding: 0.4rem; border-radius: 6px; }
+        .pricing-card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem; }
+        .btn-pricing { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-main); padding: 0.8rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; margin-top: auto; transition: all 0.2s; }
         .pricing-card.featured .btn-pricing { background: var(--text-main); color: var(--bg-dark); border: none; }
         .pricing-card.featured .btn-pricing:hover { background: var(--accent); color: var(--bg-dark); }
-        .pricing-card:not(.featured) .btn-pricing:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255,255,255,0.1); }
-        
-        .popular-ribbon { position: absolute; top: 1.25rem; right: 1.25rem; background: var(--accent); color: var(--bg-dark); font-size: 0.75rem; font-weight: 800; padding: 0.25rem 0.75rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
-        
-        footer { border-top: 1px solid var(--border-color); padding: 4rem 5%; text-align: center; color: var(--text-dim); font-size: 0.9rem; margin-top: 8rem; background: #04060c; }
+        .pricing-card:not(.featured) .btn-pricing:hover { background: rgba(255, 255, 255, 0.1); }
+        .popular-ribbon { position: absolute; top: 1rem; right: 1rem; background: var(--accent); color: var(--bg-dark); font-size: 0.75rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 4px; text-transform: uppercase; }
+        footer { border-top: 1px solid var(--border-color); padding: 3rem 5%; text-align: center; color: var(--text-dim); font-size: 0.9rem; margin-top: 6rem; background: #0b111e; }
     </style>
 </head>
 <body>
