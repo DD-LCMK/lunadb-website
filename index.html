@@ -64,7 +64,7 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3 { margin: 0; font-weight: 800; letter-spacing: -0.5px; }
+        h1, h2, h3, h4 { margin: 0; font-weight: 800; letter-spacing: -0.5px; }
         p { color: var(--text-dim); margin-bottom: 20px; font-size: 16px; }
         a { text-decoration: none; transition: 0.3s; }
 
@@ -112,7 +112,7 @@
 
         .roi-badge {
             display: inline-block; background: rgba(0, 210, 255, 0.1); border: 1px solid rgba(0, 210, 255, 0.3);
-            color: white; padding: 10px 25px; border-radius: 30px; font-weight: 600; font-size: 16px; margin-bottom: 30px;
+            color: white; padding: 10px 25px; border-radius: 30px; font-weight: 600; font-size: 16px; margin-bottom: 20px;
         }
         .roi-badge i { color: var(--primary-accent); margin-right: 8px; }
 
@@ -148,6 +148,13 @@
         .timeline-step h4 { color: white; margin-bottom: 10px; font-size: 18px; }
         .timeline-step p { font-size: 14px; margin: 0; }
 
+        /* TECHNICAL SPECIFICATIONS GRID */
+        .tech-spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto 50px; }
+        .tech-spec-box { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 20px; text-align: left; }
+        .tech-spec-box h5 { color: white; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 10px 0; display: flex; align-items: center; gap: 8px; }
+        .tech-spec-box h5 i { color: var(--primary-accent); }
+        .tech-spec-box span { color: var(--text-dim); font-size: 14px; line-height: 1.5; display: block; }
+
         /* FEATURE ROWS */
         .feature-row { display: flex; align-items: center; gap: 60px; margin-bottom: 120px; max-width: 1300px; margin-left: auto; margin-right: auto; }
         .feature-row:nth-child(even) { flex-direction: row-reverse; }
@@ -161,7 +168,7 @@
         .feature-image:hover img { transform: scale(1.05); }
 
         /* PAIN GRID & LIST ALIGNMENT FIX */
-        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; max-width: 1300px; margin: 0 auto; }
         .pain-card { background: rgba(255, 255, 255, 0.02); padding: 40px; border-radius: 15px; border-left: 4px solid var(--expert-gold); }
         .pain-card h4 { color: white; margin-bottom: 25px; font-size: 20px; }
         
@@ -181,6 +188,7 @@
         .interactive-card {
             background: rgba(255, 255, 255, 0.02); padding: 40px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.05);
             border-left: 4px solid var(--expert-gold); transition: all 0.4s ease; position: relative; overflow: hidden;
+            display: flex; flex-direction: column; justify-content: space-between;
         }
 
         .interactive-card::before {
@@ -275,6 +283,26 @@
             <h2>How We Build Your System</h2>
             <p>We believe in transparency. Here is the exact roadmap we follow to take you from spreadsheet chaos to automated clarity.</p>
         </div>
+        
+        <div class="tech-spec-grid">
+            <div class="tech-spec-box">
+                <h5><i class="fa-brands fa-python"></i> Python Workers</h5>
+                <span>Custom backend scripts executing targeted data extraction and real-time validation daemons.</span>
+            </div>
+            <div class="tech-spec-box">
+                <h5><i class="fa-solid fa-chart-pie"></i> Ingestion Parsers</h5>
+                <span>Automated multi-threaded scrapers storing incoming payloads cleanly into normalized relational tables.</span>
+            </div>
+            <div class="tech-spec-box">
+                <h5><i class="fa-solid fa-shield-halved"></i> Data Isolation Tiers</h5>
+                <span>Secure architecture structures keeping user privileges locked based on strict security roles.</span>
+            </div>
+            <div class="tech-spec-box">
+                <h5><i class="fa-solid fa-code-merge"></i> REST API Actions</h5>
+                <span>Multi-action webhooks channeling events instantly between endpoints without workflow lag.</span>
+            </div>
+        </div>
+
         <div class="timeline-container">
             <div class="timeline-step">
                 <div class="step-number">01</div>
@@ -324,15 +352,29 @@
         
         <div class="pain-grid">
             <div class="interactive-card" style="border-left-color: var(--primary-accent);">
-                <h4><i class="fa-solid fa-user-gear"></i> Expert-Tier Sub-Architecture</h4>
-                <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Scouted and retained by fellow TeamDesk Experts to optimize and manage complex legacy databases for their highest-value corporate accounts.</p>
-                <div class="divider"></div>
-                <ul class="gain-list">
-                    <li><i class="fa-solid fa-check"></i> <span>Step-in recovery logic to fix broken structural schemas, slow table indices, and circular relational dependencies.</span></li>
-                    <li><i class="fa-solid fa-check"></i> <span>Custom Python script injection to extend basic platform mechanics into fully autonomous event-driven environments.</span></li>
-                </ul>
+                <div>
+                    <h4><i class="fa-solid fa-user-gear"></i> Expert-Tier Sub-Architecture</h4>
+                    <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Scouted and retained by fellow TeamDesk Experts to optimize and manage complex legacy databases for their highest-value corporate accounts.</p>
+                    <div class="divider"></div>
+                    <ul class="gain-list">
+                        <li><i class="fa-solid fa-check"></i> <span>Step-in recovery logic to fix broken structural schemas, slow table indices, and circular relational dependencies.</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span>Custom Python script injection to extend basic platform mechanics into fully autonomous event-driven environments.</span></li>
+                    </ul>
+                </div>
             </div>
-        
+            
+            <div class="interactive-card" style="border-left-color: var(--primary-accent);">
+                <div>
+                    <h4><i class="fa-solid fa-arrow-down-up-lock"></i> Automated Ingestion & Analytics Desk</h4>
+                    <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Built an advanced data capture architecture powered by localized multi-threaded script runtime environments.</p>
+                    <div class="divider"></div>
+                    <ul class="gain-list">
+                        <li><i class="fa-solid fa-check"></i> <span><strong>Python-Driven Scrapers:</strong> Ingests external datasets and saves records cleanly into structured relational tables.</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span><strong>Drive Integration:</strong> Dynamic tracking engine that doubles as a storage hub for file drops and structural uploads.</span></li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="interactive-card" style="border-left-color: var(--primary-accent);">
                 <h4><i class="fa-solid fa-chart-network"></i> Enterprise Video Analytics SaaS</h4>
                 <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Engineered the backend schema and metadata pipelines for a high-volume analytics platform.</p>
@@ -354,13 +396,27 @@
             </div>
 
             <div class="interactive-card" style="border-left-color: var(--primary-accent);">
-                <h4><i class="fa-solid fa-calendar-days"></i> Dynamic Shift & Roster Logic</h4>
-                <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Replaced chaotic Excel scheduling with a centralized database for SMB worker management.</p>
-                <div class="divider"></div>
-                <ul class="gain-list">
-                    <li><i class="fa-solid fa-check"></i> <span>Relational table structures specifically designed to handle complex, overlapping shift rules.</span></li>
-                    <li><i class="fa-solid fa-check"></i> <span>Trigger-based alerts that instantly prevent compliance violations and double-booking.</span></li>
-                </ul>
+                <div>
+                    <h4><i class="fa-solid fa-users-viewfinder"></i> Dynamic Public Ingestion Modules</h4>
+                    <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Designed flexible, public-facing input portals to collect and process live viewer metrics.</p>
+                    <div class="divider"></div>
+                    <ul class="gain-list">
+                        <li><i class="fa-solid fa-check"></i> <span><strong>Zero-Maintenance Tracking:</strong> Replaces fragile, disconnected spreadsheet grids with a single relational endpoint.</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span><strong>Fluid Formats:</strong> Structures input matrices that support fast modifications to track daily reporting requirements.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="interactive-card" style="border-left-color: var(--primary-accent);">
+                <div>
+                    <h4><i class="fa-solid fa-receipt"></i> Consolidated Single-License Billing Loops</h4>
+                    <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">Engineered an internal workflow automation architecture designed to slash ongoing software overhead.</p>
+                    <div class="divider"></div>
+                    <ul class="gain-list">
+                        <li><i class="fa-solid fa-check"></i> <span><strong>Zero Subscription Bloat:</strong> Consolidates custom processes under a single database framework to eliminate license fragmentation.</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span><strong>Automated Invoicing:</strong> Generates records, hooks up payment paths, and drives asynchronous email services.</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
