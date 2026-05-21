@@ -1,155 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | LunaDB Enterprise Automation</title>
+    <title>Global Core Operations & Architecture Principles | LunaDB</title>
     <link rel="icon" type="image/jpeg" href="image/favicon.jpg">
-    <meta property="og:title" content="About LunaDB | Precision Engineering">
-    <meta property="og:description" content="Discover the mission, philosophy, and engineering discipline behind LunaDB's enterprise automation architectures.">
-    <meta property="og:url" content="https://lunadb.com.au/about.html">
-    <meta property="og:type" content="website">
+    <meta name="description" content="LunaDB provides high-performance data architecture with an Australian headquarters and global execution capabilities. Learn about our data handling and logic workflows.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        /* --- GLOBAL THEME VARIABLES --- */
         :root {
-            --primary-accent: #00d2ff;
-            --secondary-accent: #3a7bd5;
-            --expert-gold: #ffc107;
-            --bg-dark: #0a0f1d;
-            --text-light: #ffffff;
-            --text-dim: #a0a8c0;
-            --glass: rgba(255, 255, 255, 0.03);
+            --bg-dark: #070a13;
+            --card-bg: #0d1324;
+            --accent: #38bdf8;
+            --text-main: #f8fafc;
+            --text-dim: #708099;
+            --border-color: rgba(255, 255, 255, 0.03);
         }
 
-        body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-light); line-height: 1.8; overflow-x: hidden;}
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: system-ui, -apple-system, sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+        
         header {
-            position: fixed; top: 0; width: 100%; z-index: 1000; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center;
-            background: rgba(10, 15, 29, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(7, 10, 19, 0.7);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo { font-size: 26px; color: white; font-weight: 700; text-decoration: none; }
-        .logo span { color: var(--primary-accent); }
-        nav { display: flex; align-items: center; gap: 30px; }
-        nav a { color: var(--text-dim); font-weight: 600; font-size: 14px; text-transform: uppercase; text-decoration: none; transition: 0.3s; }
-        nav a:hover { color: var(--primary-accent); }
+        .logo { font-size: 1.4rem; font-weight: 800; color: var(--text-main); text-decoration: none; }
+        .logo span { color: var(--accent); }
+        nav { display: flex; gap: 2.5rem; }
+        nav a { color: var(--text-dim); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+        nav a.active { color: var(--text-main); }
+        .btn-header { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-main); padding: 0.5rem 1.2rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 11rem 5% 4rem; }
+        h1 { font-size: 3rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 1rem; text-align: center; }
+        .lead-text { color: var(--text-dim); font-size: 1.2rem; text-align: center; margin-bottom: 5rem; max-width: 750px; margin-left: auto; margin-right: auto; }
         
-        .btn-support {
-            background: linear-gradient(45deg, var(--secondary-accent), var(--primary-accent));
-            padding: 10px 25px; border-radius: 50px; color: white !important; text-decoration: none; display: inline-block; font-weight: bold;
-        }
-
-        .hero {
-            padding: 180px 20px 80px; text-align: center; background: linear-gradient(rgba(10, 15, 29, 0.9), rgba(10, 15, 29, 1));
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .hero h1 { font-size: 50px; color: white; margin-bottom: 20px; line-height: 1.2; }
-        .hero p { font-size: 20px; color: var(--text-dim); max-width: 800px; margin: 0 auto; }
-
-        /* CONTENT SECTIONS */
-        .content-section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
+        .block { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 3rem; margin-bottom: 2.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        .block h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; color: var(--accent); letter-spacing: -0.3px; }
+        .block p { color: var(--text-dim); font-size: 1.05rem; margin-bottom: 1.5rem; line-height: 1.7; }
+        .block ul { list-style: none; padding-left: 0.25rem; }
+        .block ul li { color: var(--text-main); font-weight: 600; margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 0.75rem; font-size: 1rem; line-height: 1.5; }
+        .block ul li i { color: var(--accent); font-size: 0.9rem; margin-top: 5px; }
         
-        .story-block {
-            display: flex; flex-direction: column; gap: 30px; margin-bottom: 60px;
-        }
-        .story-block h2 { font-size: 36px; color: white; margin-bottom: 10px; border-left: 4px solid var(--primary-accent); padding-left: 15px; }
-        .story-block p { font-size: 18px; color: var(--text-dim); margin-bottom: 20px; }
-
-        .philosophy-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;
-        }
-
-        .phil-card {
-            background: rgba(255, 255, 255, 0.02); padding: 40px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s;
-        }
-        .phil-card:hover { border-color: var(--expert-gold); transform: translateY(-5px); }
-        .phil-card i { font-size: 35px; color: var(--expert-gold); margin-bottom: 20px; }
-        .phil-card h3 { color: white; font-size: 22px; margin-bottom: 15px; }
-        .phil-card p { color: var(--text-dim); font-size: 15px; margin: 0; }
-
-        .banner { background: rgba(0, 210, 255, 0.05); border: 1px solid rgba(0, 210, 255, 0.2); padding: 40px; border-radius: 15px; text-align: center; margin-top: 60px; }
-        .banner h3 { color: white; font-size: 24px; margin-bottom: 10px; }
-        .banner p { color: var(--text-dim); margin-bottom: 20px; }
-
-        /* FOOTER */
-        footer { background: #050a14; padding: 60px 50px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 50px; }
-        footer a { color: var(--text-dim); margin: 0 15px; text-decoration: none; }
-        footer a:hover { color: var(--primary-accent); }
+        footer { border-top: 1px solid var(--border-color); padding: 4rem 5%; text-align: center; color: var(--text-dim); font-size: 0.9rem; margin-top: 6rem; background: #04060c; }
     </style>
 </head>
-
 <body>
 
     <header>
-        <a href="index.html" class="logo">Luna<span>DB</span></a>
+        <a href="index.html" class="logo"><i class="fa-solid fa-layer-group"></i> Luna<span>DB</span></a>
         <nav>
-            <a href="index.html">&larr; Back to Home</a>
-            <a href="teamdesk-expert.html">TeamDesk Consulting</a>
-            <a href="support.html?topic=quote" class="btn-support">Book Consultation</a>
+            <a href="index.html">Solutions</a>
+            <a href="about.html" class="active">Operations</a>
+            <a href="teamdesk-expert.html">Expertise</a>
         </nav>
+        <a href="support.html" class="btn-header">Client Portal</a>
     </header>
 
-    <section class="hero">
-        <h1>Precision Engineering.<br>Mission-Critical Data.</h1>
-        <p>Operating out of Australia, LunaDB designs and builds high-performance database architectures for organizations that cannot afford to fail.</p>
-    </section>
+    <div class="container">
+        <h1>Global Delivery Infrastructure</h1>
+        <p class="lead-text">How we leverage optimized low-code compilation engines and cross-border delivery loops to eliminate operational workflow friction.</p>
 
-    <section class="content-section">
-        <div class="story-block">
-            <h2>Our Story & Ethos</h2>
-            <p>LunaDB was founded on the principle that business systems should be built with absolute precision. Drawing from a deep background in military service, our approach to software architecture heavily prioritizes discipline, structured logic, and operational security.</p>
-            <p>With an established presence in Australia for over a decade, we bridge complex technical environments to solve real-world bottlenecks. We don't believe in "spaghetti code" or fragile workarounds. Whether writing custom Python automation scripts or mapping out enterprise TeamDesk schemas, we build digital backbones designed to withstand scale and scrutiny.</p>
-            <p>We serve a global client base—spanning from the United States to the Asia-Pacific—and operate fluently in both English and Korean to ensure seamless technical communication with diverse enterprise teams.</p>
+        <div class="block">
+            <h2><i class="fa-solid fa-earth-asia"></i> Dual-Market Fluidity (Global HQ Australia)</h2>
+            <p>Based in New South Wales, Australia, LunaDB bridges the operational gap between localized on-site business consultation and asynchronous global enterprise execution. We structure our engineering framework to operate cleanly across key international business timezones.</p>
+            <ul>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Follow-the-Sun Pipeline:</strong> We utilize time differentials to test, run, and compile complex automation loops overnight for US and European enterprises.</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Local Compliance Sourcing:</strong> Full alignment with Australian data privacy baselines, local GST reporting protocols, and regional corporate expectations.</span></li>
+            </ul>
         </div>
 
-        <div class="philosophy-grid">
-            <div class="phil-card">
-                <i class="fa-solid fa-server"></i>
-                <h3>Local-First Privacy</h3>
-                <p>We take data sovereignty seriously. Whenever possible, we prioritize local hosting and isolated processing environments over vulnerable cloud services, maximizing performance while ensuring your sensitive operational data remains strictly under your control.</p>
-            </div>
-            
-            <div class="phil-card">
-                <i class="fa-solid fa-crosshairs"></i>
-                <h3>Military-Grade Precision</h3>
-                <p>In our architecture, every table, API endpoint, and Python script serves a deliberate purpose. We eliminate redundancy and engineer systems that execute flawlessly under pressure, ensuring 100% accurate data routing across your entire organization.</p>
-            </div>
-
-            <div class="phil-card">
-                <i class="fa-solid fa-gears"></i>
-                <h3>The "Invisible Engine"</h3>
-                <p>Your staff shouldn't have to fight their software. We specialize in building autonomous systems that handle the heavy lifting—automated compliance, live analytics, and PDF generation—so your team can focus on strategy instead of data entry.</p>
-            </div>
+        <div class="block">
+            <h2><i class="fa-solid fa-gears"></i> Architectural Mechanics</h2>
+            <p>We strictly object to brittle single-point software dependencies. By pairing secure relational hosting containers with customized Python script daemons, we construct systems engineered for 100% processing reliability.</p>
+            <ul>
+                <li><i class="fa-solid fa-bolt"></i> <span>Rapid execution using pre-compiled low-code database core frameworks.</span></li>
+                <li><i class="fa-solid fa-code-branch"></i> <span>Bespoke JSON schema routing using automated multi-action webhooks.</span></li>
+                <li><i class="fa-solid fa-shield-halved"></i> <span>Advanced data isolation tiers guarding private business intelligence assets.</span></li>
+            </ul>
         </div>
-
-        <div style="margin-top: 80px; text-align: center;">
-            <h3 style="color: white; font-size: 28px; margin-bottom: 15px;">Our Standard Data Loop</h3>
-            <p style="color: var(--text-dim); margin-bottom: 30px;">Engineered for zero data-leakage and high-speed execution.</p>
-            <div style="max-width: 900px; margin: 0 auto; padding: 15px; background: rgba(255, 255, 255, 0.02); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.05);">
-                <img src="image/flowchart.png" alt="LunaDB Data Flow Diagram" style="width: 100%; height: auto; border-radius: 8px;">
-            </div>
-        </div>
-
-        <div class="banner">
-            <h3>Ready to upgrade your infrastructure?</h3>
-            <p>Stop running your enterprise on fragmented spreadsheets. Let's build a secure, automated future.</p>
-            <a href="support.html?topic=quote" class="btn-support" style="padding: 12px 35px; font-size: 16px;">Request a System Audit</a>
-        </div>
-    </section>
+    </div>
 
     <footer>
-        <div class="logo" style="margin-bottom: 20px;">Luna<span>DB</span></div>
-        <div style="margin-bottom: 20px;">
-            <a href="teamdesk-expert.html" style="text-decoration: none;">TeamDesk Consulting</a> |
-            <a href="https://lunadb.dbflex.net/secure/login.aspx" target="_blank" style="text-decoration: none;">LunaDB Login</a> |
-            <a href="https://www.teamdesk.net/experts/35" target="_blank" style="color: var(--expert-gold); text-decoration: none;">Official Expert Profile</a>
-        </div>
-        <p style="color: var(--text-dim);">&copy; 2026 LunaDB. All Rights Reserved.</p>
+        <p>&copy; 2026 LunaDB. Secure Engineering Structures Placed Globally.</p>
     </footer>
 
 </body>
