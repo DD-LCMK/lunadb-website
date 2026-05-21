@@ -8,51 +8,27 @@
     <meta name="description" content="LunaDB provides high-performance data architecture with an Australian headquarters and global execution capabilities. Learn about our data handling and logic workflows.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --bg-dark: #070a13;
-            --card-bg: #0d1324;
-            --accent: #38bdf8;
-            --text-main: #f8fafc;
-            --text-dim: #708099;
-            --border-color: rgba(255, 255, 255, 0.03);
-        }
-
+        :root { --bg-dark: #0f172a; --card-bg: #1e293b; --accent: #38bdf8; --text-main: #f8fafc; --text-dim: #94a3b8; --border-color: rgba(255, 255, 255, 0.05); }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: system-ui, -apple-system, sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
-        
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 5%;
-            border-bottom: 1px solid var(--border-color);
-            background: rgba(7, 10, 19, 0.7);
-            backdrop-filter: blur(12px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
+        header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; border-bottom: 1px solid var(--border-color); background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); position: fixed; width: 100%; top: 0; z-index: 1000; }
         .logo { font-size: 1.4rem; font-weight: 800; color: var(--text-main); text-decoration: none; }
         .logo span { color: var(--accent); }
-        nav { display: flex; gap: 2.5rem; }
+        nav { display: flex; gap: 2rem; }
         nav a { color: var(--text-dim); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
         nav a.active { color: var(--text-main); }
         .btn-header { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-main); padding: 0.5rem 1.2rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 11rem 5% 4rem; }
-        h1 { font-size: 3rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 1rem; text-align: center; }
-        .lead-text { color: var(--text-dim); font-size: 1.2rem; text-align: center; margin-bottom: 5rem; max-width: 750px; margin-left: auto; margin-right: auto; }
-        
-        .block { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 3rem; margin-bottom: 2.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
-        .block h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; color: var(--accent); letter-spacing: -0.3px; }
-        .block p { color: var(--text-dim); font-size: 1.05rem; margin-bottom: 1.5rem; line-height: 1.7; }
-        .block ul { list-style: none; padding-left: 0.25rem; }
-        .block ul li { color: var(--text-main); font-weight: 600; margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 0.75rem; font-size: 1rem; line-height: 1.5; }
-        .block ul li i { color: var(--accent); font-size: 0.9rem; margin-top: 5px; }
-        
-        footer { border-top: 1px solid var(--border-color); padding: 4rem 5%; text-align: center; color: var(--text-dim); font-size: 0.9rem; margin-top: 6rem; background: #04060c; }
+        .container { max-width: 900px; margin: 0 auto; padding: 8rem 5% 4rem; }
+        h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 1.5rem; text-align: center; }
+        .lead-text { color: var(--text-dim); font-size: 1.15rem; text-align: center; margin-bottom: 4rem; }
+        .block { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 2.5rem; margin-bottom: 2rem; }
+        .block h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; color: var(--accent); }
+        .block p { color: var(--text-dim); font-size: 1rem; margin-bottom: 1rem; }
+        .block ul { list-style: none; padding-left: 0.5rem; }
+        .block ul li { color: var(--text-main); font-weight: 600; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; }
+        .block ul li i { color: var(--accent); font-size: 0.85rem; }
+        footer { border-top: 1px solid var(--border-color); padding: 3rem 5%; text-align: center; color: var(--text-dim); font-size: 0.9rem; margin-top: 4rem; background: #0b111e; }
     </style>
 </head>
 <body>
