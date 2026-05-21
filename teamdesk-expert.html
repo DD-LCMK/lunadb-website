@@ -1,223 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certified TeamDesk Expert & Developer | LunaDB</title>
+    <title>Verified TeamDesk Expert & Systems Architect | LunaDB</title>
     <link rel="icon" type="image/jpeg" href="image/favicon.jpg">
-    <meta property="og:title" content="Hire a Verified TeamDesk Expert">
-    <meta property="og:description"
-        content="We design, build, and optimize mission-critical database systems. View our transparent pricing and retainer models.">
-    <meta property="og:url" content="https://lunadb.com.au/teamdesk-expert.html">
+    <meta name="description" content="Engage a verified, top-tier TeamDesk Expert and relational solutions architect. Fast-track database development, REST API webhooks, and secure cloud pipelines.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        /* Reusing your global styles */
         :root {
-            --primary-accent: #00d2ff;
-            --secondary-accent: #3a7bd5;
-            --expert-gold: #ffc107;
-            --bg-dark: #0a0f1d;
-            --text-light: #ffffff;
-            --text-dim: #a0a8c0;
+            --bg-dark: #070a13;
+            --card-bg: #0d1324;
+            --accent: #38bdf8;
+            --text-main: #f8fafc;
+            --text-dim: #708099;
+            --border-color: rgba(255, 255, 255, 0.03);
         }
 
-        body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-light); line-height: 1.8; overflow-x: hidden;}
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
         header {
-            position: fixed; top: 0; width: 100%; z-index: 1000; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center;
-            background: rgba(10, 15, 29, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(7, 10, 19, 0.7);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo { font-size: 26px; color: white; font-weight: 700; text-decoration: none; }
-        .logo span { color: var(--primary-accent); }
-        nav { display: flex; align-items: center; gap: 30px; }
-        nav a { color: var(--text-dim); font-weight: 600; font-size: 14px; text-transform: uppercase; text-decoration: none; }
-        nav a:hover { color: var(--primary-accent); }
+        .logo { font-size: 1.4rem; font-weight: 800; color: var(--text-main); text-decoration: none; }
+        .logo span { color: var(--accent); }
+        nav { display: flex; gap: 2.5rem; }
+        nav a { color: var(--text-dim); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+        nav a.active { color: var(--text-main); }
+        .btn-header { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-main); padding: 0.5rem 1.2rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+
+        .container { max-width: 1300px; margin: 0 auto; padding: 10rem 5% 4rem; }
         
-        .btn-support {
-            background: linear-gradient(45deg, var(--secondary-accent), var(--primary-accent));
-            padding: 10px 25px; border-radius: 50px; color: white !important; text-decoration: none; display: inline-block; font-weight: bold;
+        .badge-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: linear-gradient(135deg, #0d1324 0%, #10172a 100%);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            border-radius: 16px;
+            margin-bottom: 5rem;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.2);
         }
-        .btn-outline {
-            border: 1px solid var(--primary-accent); color: var(--primary-accent); padding: 10px 25px; border-radius: 50px; text-decoration: none; display: inline-block; transition: 0.3s;
-        }
-        .btn-outline:hover { background: var(--primary-accent); color: var(--bg-dark); }
 
-        .hero {
-            padding: 180px 20px 100px; text-align: center; background: linear-gradient(rgba(10, 15, 29, 0.9), rgba(10, 15, 29, 1));
+        .badge-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 2px solid rgba(56, 189, 248, 0.2);
         }
 
-        .hero h1 { font-size: 50px; color: white; margin-bottom: 20px; line-height: 1.2; }
-        .hero p { font-size: 20px; color: var(--text-dim); max-width: 800px; margin: 0 auto 40px; }
+        .badge-text h1 { font-size: 2.2rem; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
+        .badge-text p { color: var(--text-dim); font-size: 1.1rem; max-width: 800px; line-height: 1.6; }
+        .badge-text a { color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 1px dashed var(--accent); transition: all 0.2s; }
+        .badge-text a:hover { color: #fff; border-bottom-style: solid; }
         
-        .rate-badge { display: inline-block; background: rgba(255,255,255,0.05); padding: 10px 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 30px; }
-        .rate-badge span { color: var(--expert-gold); font-weight: bold; margin: 0 10px; }
-
-        section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 36px; color: white; margin-bottom: 15px; }
-        .section-header p { color: var(--primary-accent); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* GRID LAYOUTS */
-        .capabilities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-box {
-            background: rgba(255, 255, 255, 0.03); border-left: 4px solid var(--expert-gold);
-            padding: 30px; border-radius: 10px; transition: 0.3s;
+        .pricing-section { margin-top: 5rem; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header span { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; }
+        .section-header h2 { font-size: 2.6rem; font-weight: 900; margin-top: 0.5rem; letter-spacing: -0.5px; }
+        .section-header p { color: var(--text-dim); max-width: 700px; margin: 0.5rem auto 0; font-size: 1.1rem; }
+        
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem; margin-top: 4rem; }
+        
+        .pricing-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 4rem 2.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.3s, border-color 0.3s;
         }
-        .service-box:hover { background: rgba(255,255,255,0.05); transform: translateX(10px); }
-        .service-box h3 { color: white; margin-bottom: 15px; font-size: 22px; }
-        .service-box p { margin: 0; color: var(--text-dim); font-size: 15px; }
 
-        /* PRICING TABLE */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .pricing-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 40px 30px; text-align: center; position: relative; display: flex; flex-direction: column;}
-        .pricing-card.popular { border-color: var(--expert-gold); background: linear-gradient(180deg, rgba(255, 193, 7, 0.05) 0%, transparent 100%); }
-        .popular-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--expert-gold); color: #000; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
-        .pricing-card h3 { font-size: 24px; color: white; }
-        .price { font-size: 42px; color: white; font-weight: 800; margin: 20px 0; }
-        .price span { font-size: 16px; color: var(--text-dim); font-weight: normal; }
-        .pricing-features { text-align: left; margin: 30px 0; padding: 0; list-style: none; flex-grow: 1; }
-        .pricing-features li { margin-bottom: 15px; font-size: 14px; display: flex; align-items: flex-start; gap: 10px; color: var(--text-dim); }
-        .pricing-features i { color: var(--primary-accent); margin-top: 4px; }
+        .pricing-card:hover {
+            transform: translateY(-4px);
+        }
 
-        /* BANNER */
-        .philosophy-banner { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 50px; border-radius: 15px; text-align: center; margin: 60px auto; }
-        .philosophy-banner h3 { font-size: 28px; color: white; margin-bottom: 20px; }
-        .philosophy-banner p { font-size: 18px; color: var(--text-dim); max-width: 800px; margin: 0 auto; }
+        .pricing-card.featured {
+            border-color: var(--accent);
+            box-shadow: 0 10px 40px rgba(56, 189, 248, 0.08);
+            background: linear-gradient(180deg, #0d1324 0%, #0e172c 100%);
+        }
 
-        footer { background: #050a14; padding: 60px 50px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 50px; }
-        footer a { color: var(--text-dim); margin: 0 15px; }
-        footer a:hover { color: var(--primary-accent); }
+        .pricing-card h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -0.3px; }
+        
+        .price { font-size: 3.2rem; font-weight: 900; color: var(--text-main); line-height: 1; letter-spacing: -1px; }
+        .price span { font-size: 1.1rem; color: var(--text-dim); font-weight: 500; letter-spacing: 0; }
+        
+        .price-alt {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin: 0.75rem 0 2rem;
+            background: rgba(56, 189, 248, 0.04);
+            padding: 0.5rem;
+            border-radius: 6px;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        .pricing-card p { color: var(--text-dim); font-size: 1rem; margin-bottom: 2.5rem; line-height: 1.6; text-align: left; }
+        
+        .btn-pricing {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            padding: 0.9rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-top: auto;
+            transition: all 0.2s;
+        }
+
+        .pricing-card.featured .btn-pricing { background: var(--text-main); color: var(--bg-dark); border: none; }
+        .pricing-card.featured .btn-pricing:hover { background: var(--accent); color: var(--bg-dark); }
+        .pricing-card:not(.featured) .btn-pricing:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255,255,255,0.1); }
+        
+        .popular-ribbon { position: absolute; top: 1.25rem; right: 1.25rem; background: var(--accent); color: var(--bg-dark); font-size: 0.75rem; font-weight: 800; padding: 0.25rem 0.75rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        footer { border-top: 1px solid var(--border-color); padding: 4rem 5%; text-align: center; color: var(--text-dim); font-size: 0.9rem; margin-top: 8rem; background: #04060c; }
     </style>
 </head>
-
 <body>
 
     <header>
-        <a href="index.html" class="logo">Luna<span>DB</span></a>
+        <a href="index.html" class="logo"><i class="fa-solid fa-layer-group"></i> Luna<span>DB</span></a>
         <nav>
-            <a href="index.html">&larr; Back to Home</a>
-            <a href="support.html?topic=quote" class="btn-support">Book Consultation</a>
+            <a href="index.html">Solutions</a>
+            <a href="about.html">Operations</a>
+            <a href="teamdesk-expert.html" class="active">Expertise</a>
         </nav>
+        <a href="support.html" class="btn-header">Client Portal</a>
     </header>
 
-    <section class="hero">
-        <i class="fa-solid fa-certificate" style="color: var(--expert-gold); font-size: 60px; margin-bottom: 25px; filter: drop-shadow(0 0 15px rgba(255,193,7,0.5));"></i>
-        <h1>Certified TeamDesk Expert Partner</h1>
-        <p>We don't just build databases — we solve operational bottlenecks that cost your business time and money. Trusted by Medical, Logistics, Retail, and Global Hospitality networks.</p>
-        
-        <div class="rate-badge">
-            Sydney, Australia | Global Support <span>•</span> Hourly Rate: $55 USD <span>•</span> Starting Project: $200 USD
-        </div>
-        <br>
-        <a href="support.html?topic=quote" class="btn-support" style="font-size: 18px; padding: 15px 40px; margin-right: 15px;">Discuss Your Project</a>
-        <a href="https://www.teamdesk.net/experts/35" target="_blank" class="btn-outline" style="font-size: 18px; padding: 14px 40px;">View Official Profile</a>
-    </section>
-
-    <section>
-        <div class="philosophy-banner">
-            <h3>"Most database issues are not technical — they are structural."</h3>
-            <p>We focus on building systems that scale, eliminating fragile workflows, and reducing long-term maintenance costs. The result? Faster operations, fewer errors, and significantly less manual work for your team.</p>
-        </div>
-    </section>
-
-    <section>
-        <div class="section-header">
-            <p>Our Expertise</p>
-            <h2>Core Capabilities</h2>
-        </div>
-        <div class="capabilities-grid">
-            <div class="service-box">
-                <h3><i class="fa-solid fa-sitemap" style="margin-right: 10px; color: var(--primary-accent);"></i> System Architecture</h3>
-                <p>Scalable database systems built from the ground up. We design complex relational environments that match your specific operational reality without structural dead-ends.</p>
+    <div class="container">
+        <div class="badge-container">
+            <img src="image/favicon.jpg" alt="TeamDesk Corporate Logo Link" class="badge-img">
+            <div class="badge-text">
+                <h1>Verified Global TeamDesk Expert</h1>
+                <p>Officially vetted and registered on the international vendor platform. Review our verified status on the <a href="https://www.teamdesk.net/experts/35" target="_blank">Official TeamDesk Experts Directory (Expert #35)</a>.</p>
             </div>
-            <div class="service-box">
-                <h3><i class="fa-solid fa-robot" style="margin-right: 10px; color: var(--primary-accent);"></i> Python Automation & API</h3>
-                <p>Advanced API programming and Python scripting to connect TeamDesk to third-party platforms, eliminating manual data entry and expanding platform capabilities.</p>
-            </div>
-            <div class="service-box">
-                <h3><i class="fa-solid fa-gauge-high" style="margin-right: 10px; color: var(--primary-accent);"></i> Performance Optimization</h3>
-                <p>If your current setup is slow, overly manual, or difficult to scale, we audit and restructure the logic to fix unstable or inefficient systems.</p>
-            </div>
-            <div class="service-box">
-                <h3><i class="fa-solid fa-diagram-project" style="margin-right: 10px; color: var(--primary-accent);"></i> Workflow Engineering</h3>
-                <p>We map and automate your critical business procedures, including auto-generating invoices, complex reporting logic, and internal approval routing.</p>
-            </div>
-            <div class="service-box">
-                <h3><i class="fa-solid fa-file-import" style="margin-right: 10px; color: var(--primary-accent);"></i> Data Migration</h3>
-                <p>Secure transition from messy Excel spreadsheets or legacy CRM/database systems into a unified, clean TeamDesk environment.</p>
-            </div>
-            <div class="service-box">
-                <h3><i class="fa-solid fa-chalkboard-user" style="margin-right: 10px; color: var(--primary-accent);"></i> Training & Handover</h3>
-                <p>We provide 1-on-1 live training sessions, detailed documentation, and full system walkthroughs so your team feels confident using the tools.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing">
-        <div class="section-header">
-            <p>Transparent Pricing</p>
-            <h2>Ongoing Partnership Models</h2>
-            <p style="color: var(--text-dim); text-transform: none; font-weight: normal; margin-top: 10px;">We work with clients through ongoing partnerships and one-off project-based engagements. (All pricing in USD).</p>
         </div>
 
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Starter</h3>
-                <div class="price">$200<span> / month</span></div>
-                <ul class="pricing-features">
-                    <li><i class="fa-solid fa-check"></i> Up to 3 hours of development/month</li>
-                    <li><i class="fa-solid fa-check"></i> System monitoring & maintenance</li>
-                    <li><i class="fa-solid fa-check"></i> Minor updates and fixes</li>
-                    <li><i class="fa-solid fa-check"></i> Email support (48h response)</li>
-                </ul>
-                <a href="support.html?topic=quote&plan=Starter" class="btn-outline">Select Starter</a>
+        <section class="pricing-section">
+            <div class="section-header">
+                <span>Transparent Engineering Rates</span>
+                <h2>Flexible Engagement Pathways</h2>
+                <p>Choose the engagement infrastructure that best matches your corporate operational velocity. We maintain clean channels for global USD invoicing and native AUD compliance billing.</p>
             </div>
 
-            <div class="pricing-card popular">
-                <div class="popular-badge">Most Popular</div>
-                <h3>Growth</h3>
-                <div class="price">$500<span> / month</span></div>
-                <ul class="pricing-features">
-                    <li><i class="fa-solid fa-check"></i> <strong>Up to 10 hours</strong> of development/month</li>
-                    <li><i class="fa-solid fa-check"></i> Priority support (24h response)</li>
-                    <li><i class="fa-solid fa-check"></i> Feature enhancements & automation updates</li>
-                    <li><i class="fa-solid fa-check"></i> Monthly system review</li>
-                    <li><i class="fa-solid fa-check"></i> Everything in Starter</li>
-                </ul>
-                <a href="support.html?topic=quote&plan=Growth" class="btn-support">Select Growth</a>
-            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Hourly Consultation</h3>
+                    <div class="price">$55 <span>USD / hr</span></div>
+                    <div class="price-alt">Approx. $85 AUD + GST for local clients</div>
+                    <p>Designed for focused architecture trouble-shooting, database scheme health checks, multi-action trigger debugging, or targeted custom script modifications.</p>
+                    <a href="support.html" class="btn-pricing">Initiate Consultation</a>
+                </div>
 
-            <div class="pricing-card">
-                <h3>Enterprise</h3>
-                <div class="price">Custom</div>
-                <ul class="pricing-features">
-                    <li><i class="fa-solid fa-check"></i> Dedicated development support</li>
-                    <li><i class="fa-solid fa-check"></i> Advanced architecture & custom integrations</li>
-                    <li><i class="fa-solid fa-check"></i> Rapid turnaround SLAs</li>
-                    <li><i class="fa-solid fa-check"></i> Ongoing scaling & optimization</li>
-                </ul>
-                <a href="support.html?topic=quote&plan=Enterprise" class="btn-outline">Contact Us</a>
+                <div class="pricing-card featured">
+                    <span class="popular-ribbon">Highly Requested</span>
+                    <h3>Operational Support Plan</h3>
+                    <div class="price">$200 <span>USD / mo</span></div>
+                    <div class="price-alt">Approx. $295 AUD / mo (Inc. GST)</div>
+                    <p>Perfect for expanding operations requiring routine architecture scaling, steady user role configurations, secondary workflow adjustments, and system monitoring.</p>
+                    <a href="support.html" class="btn-pricing">Secure Support Guard</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Enterprise Velocity</h3>
+                    <div class="price">$500 <span>USD / mo</span></div>
+                    <div class="price-alt">Approx. $750 AUD / mo (Ex. GST)</div>
+                    <p>Engineered for continuous baseline construction lifecycles, full API script pipelines, complex Python microservice bindings, and priority rapid support response slots.</p>
+                    <a href="support.html" class="btn-pricing">Deploy Enterprise Track</a>
+                </div>
             </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 50px;">
-            <h3 style="color: white; margin-bottom: 10px;">Looking for Project-Based Work?</h3>
-            <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto 20px;">Ideal for one-time builds, migrations, or full system redesigns. Starts at $200. Book a free consultation for a system review and bottleneck identification.</p>
-            <a href="support.html?topic=quote" style="color: var(--expert-gold); font-weight: bold; text-decoration: underline;">Request a Custom Quote &rarr;</a>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <footer>
-        <div class="logo" style="margin-bottom: 20px;">Luna<span>DB</span></div>
-        <div style="margin-bottom: 20px;">
-            <a href="teamdesk-expert.html" style="text-decoration: none;">TeamDesk Consulting</a> |
-            <a href="https://lunadb.dbflex.net/secure/login.aspx" target="_blank" style="text-decoration: none;">LunaDB Login</a> |
-            <a href="https://www.teamdesk.net/experts/35" target="_blank" style="color: var(--expert-gold); text-decoration: none;">Official Expert Profile</a>
-        </div>
-        <p style="color: var(--text-dim);">&copy; 2026 LunaDB. All Rights Reserved.</p>
+        <p>&copy; 2026 LunaDB. Supporting Multi-Currency Invoicing Across Global Timezones.</p>
     </footer>
 
 </body>
